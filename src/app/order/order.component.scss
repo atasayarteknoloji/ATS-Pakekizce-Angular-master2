@@ -1,0 +1,45 @@
+@import "../../scss/ui/_variable.scss";
+@import "../../scss/ui/_mixins";
+@import "~bootstrap/scss/bootstrap";
+.request-form{
+  padding: 50px 25px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px 0 rgba(106, 120, 245, 0.15);
+  border: solid 1px #eaeaea;
+  background-color: #ffffff;
+  @include media-breakpoint-down(sm){
+    width: 300px;
+  }
+
+  @include  media-breakpoint-only(md)
+  {
+    width: 500px;
+  }
+
+  @include  media-breakpoint-up(lg)
+  {
+    width: 800px;
+  }
+  .form-header{
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+
+  }
+   .form-row-item{
+     margin-bottom: 15px;
+
+     .title{
+       color: #6e7785;
+     }
+   }
+
+    .sbm-button{
+      position: absolute;
+      right: 15px;
+      left: auto;
+      background-color: #2759a6 !important;
+      border-color: #2759a6 !important;
+
+  }
+  }

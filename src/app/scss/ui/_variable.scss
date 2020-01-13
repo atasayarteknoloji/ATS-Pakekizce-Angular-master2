@@ -1,0 +1,66 @@
+$images-path: "/assets/images";
+$background-image: "bg.png"; //31, 11, 33, 56
+$video-path: "/assets/video";
+$background-video: "logo.mp4"; //31, 11, 33, 56
+//######################## fonts
+$font-open-sans: 'Open Sans';
+$font-default: $font-open-sans;
+$font-default-size: 16px;
+$font-current-size: 16px;
+
+$red_hex: #CE172C;
+$blue_hex: #135EB9;
+$grey_hex: #4F5858;
+$yellow_hex: #ffae5f;
+$light_grey_hex: #929e9e;
+$light_blue_hex: #5a7a98;
+$white_hex: #ffffff;
+
+$colors: (
+  red: #fe2851,
+  blue: #1d8af9,
+  slate: #7760c8,
+  yellow: #fdba12,
+  orange: #ff7918,
+  purple: #be38a9,
+  green: #8ec63f,
+  tomato: #ff6060,
+  black: #151e3b,
+  lightgrey: #e4e8ed,
+  grey: #808080,
+  middlegrey: #919eab,
+  darkgrey: #323c47,
+  white: #ffffff,
+  lilac: #d6a2e8,
+  cyan: #25ccf7,
+  background: #f5f9fa,
+  deepblue: #383a62,
+  tuscansun: #f8cf1c,
+  oxfordblue: #1c1a34,
+  radicalred: #ff3e51,
+  emerald:#43bf68,
+  stormgrey: #696b89,
+  pastelgreen: #50e37b,
+  titanwhite: #d9d9e1,
+  buttercup: #f5a623,
+  dustygrey: #9b9b9b,
+  charcoal: #4a4a4a,
+  cornflower-blue:#4473ff,
+  nerogray: #252525,
+  greysuit: #8e8e93,
+  royalblue: #4a90e2,
+  slategrey: #747591,
+  luckyblue: #2a2b4e,
+  nightblue: #20203b,
+  black-text: #111111,
+  cloudburst: #363452,
+  silver: #c2c2c2
+);
+
+%maximize {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+}

@@ -1,0 +1,23 @@
+$navbar-color:#131b37;
+
+.navbar{
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 76px;
+  background-color: $navbar-color !important;
+.logo{
+  width: 240px;
+}
+}
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  .toggle{
+    position: absolute;
+    right: 15px;
+  }
+}
