@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row ">
       <div class="col-6 ">
-        <button (click)="toggleNew()"
-          style="border-radius: 25px; background-color: dodgerblue; color: floralwhite; width: 100px; height: 40px;float:right;">Yeni</button>
+        <button (click)="toggleNew()" (click)="!toggleInprogress()"
+          style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 100px; height: 40px;float:right;">Yeni</button>
       </div>
       <div class="col-6 ">
-        <button (click)="toggleInprogress()"
-          style="border-radius: 25px; background-color: dodgerblue; color: floralwhite; width: 100px; height: 40px;">Tamamlanmış</button>
+        <button (click)="!toggleNew()" (click)="toggleInprogress()"
+          style="border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 100px; height: 40px;">Tamamlanmış</button>
       </div>
     </div>
     <div class="row ">

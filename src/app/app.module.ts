@@ -26,7 +26,8 @@ import { UncompleteOrderModule } from './order/getInprogressOrder/uncomplete-ord
 import { OrderComponent } from './order/order.component'
 import { OrderModule } from './order/order.module';
 import { NewOrderModule } from './order/getNewOrder/new-order.module';
-import { TableFilterPipe } from './order/table-filter.pipe';
+import { TableFilterPipe } from './order/table-filter.pipe';;
+import { PrintComponent } from './components/print/print.component'
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -57,7 +58,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     NavbarComponent,
     TableFilterPipe
-  ],
+,
+    PrintComponent  ],
     
     
     providers: [

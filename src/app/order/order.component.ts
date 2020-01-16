@@ -27,7 +27,7 @@ export class OrderComponent implements OnInit {
     private newOrderDetailService: NeworderDetailService) { }
   newOrder: NewOrder[]
   newOrderDetail: NewOrderDetail[];
-  isShow = true;
+  isShow = false;
   deneme = true;
   ngOnInit() {
   }

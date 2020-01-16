@@ -67,4 +67,7 @@ export class UncompleteOrderComponent implements OnInit {
       this.inprogressOrder=o;
     });
   }
+  print(){
+    window.print();
+  }
 }

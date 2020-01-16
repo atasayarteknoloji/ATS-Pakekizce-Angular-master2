@@ -4,6 +4,9 @@ import { NewOrder } from './new-order';
 import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
 import {Router,Routes} from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { filter } from 'rxjs/operators';
+import { TableFilterPipe } from '../table-filter.pipe';
+import { Ng2SmartTableComponent } from 'ng2-smart-table/lib/ng2-smart-table.component';
 
 
 @Component({
@@ -20,6 +23,7 @@ export class NewOrderComponent implements OnInit {
       edit: false, // true,
       delete: false, // true,
       custom: true
+
     },
     columns: {
       orderNo: {
@@ -61,5 +65,8 @@ export class NewOrderComponent implements OnInit {
   }
   onUserRowSelect(e) {
     console.log('onUserRowSelect', e);
+    }
+    print(){
+      window.print();
     }
 }
