@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NewOrder } from './getNewOrder/new-order';
+import { NewOrder } from '../getNewOrder/new-order';
 
 @Pipe({
   name: 'tableFilter'

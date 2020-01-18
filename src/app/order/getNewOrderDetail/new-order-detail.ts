@@ -1,7 +1,7 @@
 export class NewOrderDetail{
+    orderId:string;
     itemId : number;
     itemName:string;
-    lineType:string;
-    isThereBarcode:boolean;
-    itemStatu:number;
+    quantity:number;
+    itemUnit:string;
 }

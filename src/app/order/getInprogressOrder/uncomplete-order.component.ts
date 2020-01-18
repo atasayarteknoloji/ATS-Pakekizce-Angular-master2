@@ -25,8 +25,12 @@ export class UncompleteOrderComponent implements OnInit {
       custom: false
     },
     columns: {
+      orderId:{
+        title:'Sipariş Id',
+        type:'string'
+      },
       orderNo: {
-        title: 'Sipariş ID',
+        title: 'Sipariş No',
         type: 'number',
         filter:false
 
@@ -36,13 +40,6 @@ export class UncompleteOrderComponent implements OnInit {
         filter:false,
         valuePrepareFunction: (orderCreatedDate)=>{
           return this.datePipe.transform(new Date(orderCreatedDate),'dd MM yyyy');
-        }
-      },
-      orderProcessStartDate:{
-        title:'İşleme Başlama Tarihi',
-        filter:false,
-        valuePrepareFunction: (orderProcessStartDate)=>{
-          return this.datePipe.transform(new Date(orderProcessStartDate),'dd MM yyyy');
         }
       },
       currentInfo: {

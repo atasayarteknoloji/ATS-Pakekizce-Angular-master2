@@ -5,7 +5,7 @@ import { OrderComponent } from './order.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NewOrderModule } from './getNewOrder/new-order.module';
 import { UncompleteOrderModule } from './getInprogressOrder/uncomplete-order.module';
-import { TableFilterPipe } from './table-filter.pipe';
+import { TableFilterPipe } from './table-filter/table-filter.pipe';
 import { NewOrderComponent } from './getNewOrder/new-order.component';
 import { NewOrderDetailComponent } from './getNewOrderDetail/new-order-detail.component';
 

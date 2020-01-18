@@ -1,7 +1,7 @@
 export class UncompleteOrder{
+    orderId:string;
     orderNo:number;
     orderCreatedDate:Date;
-    orderProcessStartDate:Date;
     currentInfo:string;
     orderStatu:number;
 }

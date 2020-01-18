@@ -3,11 +3,11 @@
     <div class="row ">
       <div class="col-6 ">
         <button (click)="toggleNew()" (click)="!toggleInprogress()"
-          style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 100px; height: 40px;float:right;">Yeni</button>
+          style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 150px; height: 40px;float:right;">Yeni</button>
       </div>
       <div class="col-6 ">
         <button (click)="!toggleNew()" (click)="toggleInprogress()"
-          style="border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 100px; height: 40px;">Tamamlanmış</button>
+          style="border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 150px; height: 40px;">Tamamlanmamış</button>
       </div>
     </div>
     <div class="row ">
@@ -18,5 +18,6 @@
         <app-uncomplete-order></app-uncomplete-order>
       </div>
     </div>
+    <button routerLink='/to-dyehouse'>BOYAHANEYE GİDİŞ</button>
   </div>
 </div>

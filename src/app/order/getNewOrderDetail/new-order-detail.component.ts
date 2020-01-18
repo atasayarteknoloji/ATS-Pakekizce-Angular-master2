@@ -12,6 +12,10 @@ export class NewOrderDetailComponent implements OnInit {
   constructor(private newOrderDetailService:NeworderDetailService) { }
   settings = {
     columns: {
+      orderId:{
+        title:'Sipariş Id',
+        type:'string'
+      },
       itemId: {
         title: 'Ürün Id',
         type: 'number',
@@ -20,17 +24,13 @@ export class NewOrderDetailComponent implements OnInit {
         title: 'Ürün Adı',
         type: 'string',
       },
-      lineType: {
-        title: 'Kalem Tipi',
-        type: 'string',
+      quantity:{
+        title:'Miktar',
+        type:'number'
       },
-      isThereBarcode: {
-        title: 'Barkod var mı?',
-        type: 'boolean',
-      },
-      itemStatu: {
-        title: 'Ürün Statü',
-        type: 'number',
+      itemUnit:{
+        title:'Ürün Birimi',
+        type:'string'
       }
     },
   };

@@ -10,6 +10,7 @@ import { NewOrderComponent } from './order/getNewOrder/new-order.component';
 import { NewOrderDetailComponent } from './order/getNewOrderDetail/new-order-detail.component';
 import { UncompleteOrderComponent } from './order/getInprogressOrder/uncomplete-order.component';
 import { OrderComponent } from './order/order.component';
+import {ToDyehouseComponent} from './dyehouse/to-dyehouse/to-dyehouse.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,10 @@ const routes: Routes = [
     loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
   },
   {
+    path: 'to-dyehouse',
+    loadChildren: () => import('./dyehouse/to-dyehouse/to-dyehouse.module').then(m => m.ToDyehouseModule)
+  },
+  {
     path: ROUTING.NEW_ORDER,
     component: NewOrderComponent
   },
@@ -59,6 +64,10 @@ const routes: Routes = [
   {
     path: ROUTING.ORDER,
     component: OrderComponent
+  },
+  {
+    path: ROUTING.TODYEHOUSE,
+    component: ToDyehouseComponent
   },
   // otherwise redirect to home
   {path: '**', redirectTo: ''}
