@@ -1,10 +1,10 @@
-<h4 style="font-family: sans-serif; text-align: center; color:#777575;margin:10px;">Yeni Sipariş</h4>
+<h4 style="font-family: sans-serif; text-align: center; color:#777575;margin:10px;">Tamamlanmamış Sipariş</h4>
 <div class="container p-3 my-3 border"
     style="height: 305px; width: 934px; border-radius: 15px; background-color: white;  ">
     <div class="sidebar-search">
         <div>
             <div class="input-group">
-                <input class="form-control mr-sm-2" [(ngModel)]="filterText" type="search" placeholder="Search..."
+                <input class="form-control mr-sm-2" type="search" placeholder="Search..."
                     aria-label="Search">
                 <div class="input-group-append">
                     <span class="input-group-text">
@@ -14,6 +14,6 @@
             </div>
         </div>
     </div>
-    <ng2-smart-table class="table table-hover" [settings]="settings" [source]="newOrder" (custom)="customRoute($event)" >
+    <ng2-smart-table class="table table-hover" [settings]="settings" [source]="inprogressOrder" (custom)="customRoute($event)">
     </ng2-smart-table>
 </div>

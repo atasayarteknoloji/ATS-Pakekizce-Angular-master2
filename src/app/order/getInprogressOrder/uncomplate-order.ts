@@ -1,4 +1,4 @@
-export class UncompleteOrder{
+export class UncomplateOrder{
     orderId:string;
     orderNo:number;
     orderCreatedDate:Date;

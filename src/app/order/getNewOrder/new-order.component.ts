@@ -6,7 +6,6 @@ import { Router, Routes } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { TableFilterPipe } from '../table-filter/table-filter.pipe';
-import { Ng2SmartTableComponent } from 'ng2-smart-table/lib/ng2-smart-table.component';
 import { NeworderDetailService } from '../getNewOrderDetail/new-order-detail.service';
 import { NewOrderDetail } from '../getNewOrderDetail/new-order-detail';
 
@@ -24,7 +23,13 @@ export class NewOrderComponent implements OnInit {
       add: false,
       edit: false, // true,
       delete: false, // true,
-      custom: true
+      custom: [{name:'Detay', title:'<i class="fa fa-eye"></i>'}],
+      position:'right',
+      filter:{
+        type:'list',
+        config:{
+        }
+      }
 
     },
     columns: {
@@ -60,8 +65,10 @@ export class NewOrderComponent implements OnInit {
   newOrder: NewOrder[];
   constructor(private newOrderService: NeworderService,
     private datePipe: DatePipe,
-    private route: Router) { }
-  isShow = true;
+    private route: Router,
+    private newOrderDetail:NewOrderDetail) { }
+    deneme:NewOrder[];
+
   ngOnInit() {
     this.getNewOrder();
   }
@@ -70,11 +77,11 @@ export class NewOrderComponent implements OnInit {
       this.newOrder = o;
     });
   }
-  onUserRowSelect(e) {
+  customRoute(e) {
     console.log('onUserRowSelect', e);
-
-  }
-  print() {
-    window.print();
+    if(e.data.orderId === this.newOrderDetail.orderId )
+    {
+  
+    }
   }
 }

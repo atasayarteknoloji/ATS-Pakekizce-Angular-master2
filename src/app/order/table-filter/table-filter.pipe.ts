@@ -6,7 +6,7 @@ import { NewOrder } from '../getNewOrder/new-order';
 })
 export class TableFilterPipe implements PipeTransform {
 
-  transform(value: NewOrder[], filterText?: string): NewOrder[] {
+  transform(value: NewOrder[] , filterText?: string): NewOrder[] {
     if(!filterText){
       return value;
     }

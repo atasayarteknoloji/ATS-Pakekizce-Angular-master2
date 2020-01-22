@@ -4,16 +4,16 @@ import { OrderRoutingModule } from './order-routing';
 import { OrderComponent } from './order.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NewOrderModule } from './getNewOrder/new-order.module';
-import { UncompleteOrderModule } from './getInprogressOrder/uncomplete-order.module';
+import { UncomplateOrderModule } from './getInprogressOrder/uncomplate-order.module';
 import { TableFilterPipe } from './table-filter/table-filter.pipe';
 import { NewOrderComponent } from './getNewOrder/new-order.component';
 import { NewOrderDetailComponent } from './getNewOrderDetail/new-order-detail.component';
-
+import { ComplatedOrderComponent } from './getComplatedOrder/complated-order.component';
 
 
 @NgModule({
-  declarations: [OrderComponent],
-  imports: [CommonModule, OrderRoutingModule,Ng2SmartTableModule, NewOrderModule,UncompleteOrderModule],
+  declarations: [OrderComponent, ComplatedOrderComponent],
+  imports: [CommonModule, OrderRoutingModule,Ng2SmartTableModule, NewOrderModule,UncomplateOrderModule],
   exports: [OrderComponent]
 })
 export class OrderModule {

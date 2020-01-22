@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { UncompleteOrderComponent } from './uncomplete-order.component';
+import { UncomplateOrderComponent } from './uncomplate-order.component';
 
 
 const routes: Routes = [{
   path: '',
-  component: UncompleteOrderComponent
+  component: UncomplateOrderComponent
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UncompleteOrderRoutingModule {
+export class UncomplateOrderRoutingModule {
 }

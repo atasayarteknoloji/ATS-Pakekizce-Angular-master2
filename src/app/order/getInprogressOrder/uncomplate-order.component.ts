@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { UncompleteOrderService } from './uncomplete-order.service';
-import { UncompleteOrder } from './uncomplete-order';
+import { UncomplateOrderService } from './uncomplate-order.service';
+import { UncomplateOrder } from './uncomplate-order';
 import {DatePipe} from '@angular/common';
 
 @Component({
-  selector: 'app-uncomplete-order',
-  templateUrl: './uncomplete-order.component.html',
-  styleUrls: ['./uncomplete-order.component.sass'],
+  selector: 'app-uncomplate-order',
+  templateUrl: './uncomplate-order.component.html',
+  styleUrls: ['./uncomplate-order.component.sass'],
   providers:[DatePipe]
 })
-export class UncompleteOrderComponent implements OnInit {
+export class UncomplateOrderComponent implements OnInit {
 
   
   constructor(
-    private uncompleteOrderService : UncompleteOrderService,
+    private uncomplateOrderService : UncomplateOrderService,
     private datePipe:DatePipe
   ) {}
   settings = {
@@ -22,12 +22,19 @@ export class UncompleteOrderComponent implements OnInit {
       add: false,
       edit: false, // true,
       delete: false, // true,
-      custom: false
+      custom: [{name:'Detay', title:'<i class="fa fa-eye"></i>'}],
+      position:'right',
+      filter:{
+        type:'completer',
+        config:{
+        }
+      }
     },
     columns: {
       orderId:{
         title:'Sipariş Id',
-        type:'string'
+        type:'string',
+        filter:false
       },
       orderNo: {
         title: 'Sipariş No',
@@ -54,17 +61,17 @@ export class UncompleteOrderComponent implements OnInit {
       },
     },
   };
-  inprogressOrder:UncompleteOrder[]
+  inprogressOrder:UncomplateOrder[]
 
   ngOnInit() {
     this.getInprogressOrder();
   }
   getInprogressOrder(){
-    this.uncompleteOrderService.getData().subscribe(o=> {
+    this.uncomplateOrderService.getData().subscribe(o=> {
       this.inprogressOrder=o;
     });
   }
-  print(){
-    window.print();
+  customRoute(e) {
+    console.log('onUserRowSelect', e);
   }
 }

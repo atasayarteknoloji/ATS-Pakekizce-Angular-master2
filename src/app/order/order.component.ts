@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NeworderService } from './getNewOrder/new-order.service';
 import { NewOrder } from './getNewOrder/new-order';
 import { DatePipe } from '@angular/common';
-import { UncompleteOrderService } from './getInprogressOrder/uncomplete-order.service';
-import { UncompleteOrder } from './getInprogressOrder/uncomplete-order';
+import { UncomplateOrderService } from './getInprogressOrder/uncomplate-order.service';
+import { UncomplateOrder } from './getInprogressOrder/uncomplate-order';
 import { NeworderDetailService } from './getNewOrderDetail/new-order-detail.service';
 import { NewOrderDetail } from './getNewOrderDetail/new-order-detail';
 
@@ -29,22 +29,20 @@ export class OrderComponent implements OnInit {
   newOrderDetail: NewOrderDetail[];
   isShow = false;
   deneme = true;
+  deneme1=true;
   ngOnInit() {
-  }
-  getNewOrder() {
-    this.newOrderService.getData().subscribe(o => {
-      this.newOrder = o;
-    });
-  }
-  getInprogressOrder() {
-  }
-  getComplatedOrder() {
   }
   toggleNew() {
     this.isShow = !this.isShow;
   }
   toggleInprogress() {
     this.deneme = !this.deneme;
+  }
+  toggleComplatedOrder(){
+    this.deneme1 =!this.deneme1;
+  }
+  print(){
+    window.print();
   }
 
 }

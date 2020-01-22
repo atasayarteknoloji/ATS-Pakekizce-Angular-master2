@@ -1,23 +1,34 @@
 <div style="margin: 100px;">
   <div class="container">
     <div class="row ">
-      <div class="col-6 ">
-        <button (click)="toggleNew()" (click)="!toggleInprogress()"
-          style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 150px; height: 40px;float:right;">Yeni</button>
+      <div class="col-4 ">
+        <button (click)="toggleNew()" (click)="!toggleInprogress() || !toggleComplatedOrder()"
+          style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 150px; height: 40px;float:right;">Yeni <i class="fa fa-hourglass-start" aria-hidden="true"></i></button>
       </div>
-      <div class="col-6 ">
-        <button (click)="!toggleNew()" (click)="toggleInprogress()"
-          style="border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 150px; height: 40px;">Tamamlanmamış</button>
+      <div class="col-4 ">
+        <button (click)="!toggleNew() || !toggleComplatedOrder()" (click)="toggleInprogress()"
+          style="margin: auto; display: block;border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 150px; height: 40px;">İşlemde <i class="fa fa-hourglass-half" aria-hidden="true"></i></button>
+      </div>
+      <div class="col-4 ">
+        <button (click)="!toggleNew() || !toggleInprogress()" (click)="toggleComplatedOrder()"
+          style="border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 150px; height: 40px;">Tamamlanmış <i class="fa fa-hourglass-end" aria-hidden="true"></i></button>
       </div>
     </div>
     <div class="row ">
       <div [hidden]="isShow" class=" container">
         <app-new-order></app-new-order>
       </div>
-      <div [hidden]="deneme"  class=" container ">
-        <app-uncomplete-order></app-uncomplete-order>
+      <div [hidden]="deneme" class=" container ">
+        <app-uncomplate-order></app-uncomplate-order>
+      </div>
+      <div [hidden]="deneme1" class=" container ">
+        <app-complated-order></app-complated-order>
       </div>
     </div>
-    <button routerLink='/to-dyehouse'>BOYAHANEYE GİDİŞ</button>
+    <button routerLink='/to-dyehouse'
+      style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 150px; height: 40px;">Boyahaneye Gidiş <i class="fa fa-truck" aria-hidden="true"></i></button>
+    <button (click)="print()"
+      style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 50px; height: 40px;float:right;"><i
+        class="fa fa-print" aria-hidden="true"></i></button>
   </div>
 </div>

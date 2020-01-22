@@ -24,7 +24,7 @@ export class SidebarService {
         },
         {
           title: 'Tamamlanmamış Sipariş',
-          routerLink: ROUTING.UNCOMPLETEORDER
+          routerLink: ROUTING.UNCOMPLATEORDER
 
         },
         {

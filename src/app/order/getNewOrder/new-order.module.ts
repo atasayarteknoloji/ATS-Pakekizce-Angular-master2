@@ -7,13 +7,15 @@ import { TableFilterPipe } from '../table-filter/table-filter.pipe';
 import { OrderComponent } from '../order.component';
 import { OrderModule } from '../order.module';
 import { FormsModule } from '@angular/forms';
+import { NewOrderDetail } from '../getNewOrderDetail/new-order-detail';
 
 
 
 @NgModule({
   declarations: [NewOrderComponent],
   imports: [CommonModule, NewOrderRoutingModule,Ng2SmartTableModule,FormsModule],
-  exports: [NewOrderComponent]
+  exports: [NewOrderComponent],
+  providers:[NewOrderDetail]
 })
 export class NewOrderModule {
 }

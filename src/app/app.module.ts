@@ -18,19 +18,16 @@ import { AppRoutingModule } from './app.routing';
 import { CreateRequestComponent } from './requests/create-request';
 import { NewOrderComponent } from './order/getNewOrder/new-order.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { NewOrderDetailComponent } from './order/getNewOrderDetail/new-order-detail.component';
 import { NewOrderDetailModule } from './order/getNewOrderDetail/new-order-detail.module';;
-import { UncompleteOrderComponent } from './order/getInprogressOrder/uncomplete-order.component'
-import { UncompleteOrderModule } from './order/getInprogressOrder/uncomplete-order.module';;
-import { OrderComponent } from './order/order.component'
 import { OrderModule } from './order/order.module';
 import { NewOrderModule } from './order/getNewOrder/new-order.module';
 import { TableFilterPipe } from './order/table-filter/table-filter.pipe';
 import { PrintComponent } from './components/print/print.component';
-import { ToDyehouseComponent } from './dyehouse/to-dyehouse/to-dyehouse.component';
 import { TurnDyehouseComponent } from './dyehouse/turn-dyehouse/turn-dyehouse.component';
 import { ToDyehouseModule } from './dyehouse/to-dyehouse/to-dyehouse.module';
-import { ToDyehouseRoutingModule } from './dyehouse/to-dyehouse/to-dyehouse-routing';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UncomplateOrderModule } from './order/getInprogressOrder/uncomplate-order.module';
+
 
 
 
@@ -50,11 +47,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AngularFontAwesomeModule,
     Ng2SmartTableModule,
     NewOrderDetailModule,
-    UncompleteOrderModule,
+    UncomplateOrderModule,
     OrderModule,
     NewOrderModule,
     FormsModule,
-    ToDyehouseModule
+    ToDyehouseModule,
+    NewOrderDetailModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     AppComponent,

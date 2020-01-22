@@ -8,7 +8,7 @@ import {NgModule} from '@angular/core';
 import {ROUTING} from './shared/routing';
 import { NewOrderComponent } from './order/getNewOrder/new-order.component';
 import { NewOrderDetailComponent } from './order/getNewOrderDetail/new-order-detail.component';
-import { UncompleteOrderComponent } from './order/getInprogressOrder/uncomplete-order.component';
+import { UncomplateOrderComponent } from './order/getInprogressOrder/uncomplate-order.component';
 import { OrderComponent } from './order/order.component';
 import {ToDyehouseComponent} from './dyehouse/to-dyehouse/to-dyehouse.component';
 
@@ -38,8 +38,8 @@ const routes: Routes = [
     loadChildren: () => import('./order/getNewOrderDetail/new-order-detail.module').then(m => m.NewOrderDetailModule)
   },
   {
-    path: 'uncomplete-order',
-    loadChildren: () => import('./order/getInprogressOrder/uncomplete-order.module').then(m => m.UncompleteOrderModule)
+    path: 'uncomplate-order',
+    loadChildren: () => import('./order/getInprogressOrder/uncomplate-order.module').then(m => m.UncomplateOrderModule)
   },
   {
     path: 'order',
@@ -58,8 +58,8 @@ const routes: Routes = [
     component: NewOrderDetailComponent
   },
   {
-    path: ROUTING.UNCOMPLETEORDER,
-    component: UncompleteOrderComponent
+    path: ROUTING.UNCOMPLATEORDER,
+    component: UncomplateOrderComponent
   },
   {
     path: ROUTING.ORDER,
