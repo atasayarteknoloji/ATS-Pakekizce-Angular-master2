@@ -18,6 +18,9 @@ export const endpoints = {
     },
     getNewOrderDetail: {
       path: servers.postmanMock + '/getNewOrderDetail'
+    },
+    getOrder:{
+      path:servers.postmanMock + '/getOrder'
     }
   }
 };

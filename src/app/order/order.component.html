@@ -2,15 +2,15 @@
   <div class="container">
     <div class="row ">
       <div class="col-4 ">
-        <button (click)="toggleNew()" (click)="!toggleInprogress() || !toggleComplatedOrder()"
+        <button (click)="toggleNew()"
           style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 150px; height: 40px;float:right;">Yeni <i class="fa fa-hourglass-start" aria-hidden="true"></i></button>
       </div>
       <div class="col-4 ">
-        <button (click)="!toggleNew() || !toggleComplatedOrder()" (click)="toggleInprogress()"
+        <button  (click)="toggleInprogress()"
           style="margin: auto; display: block;border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 150px; height: 40px;">İşlemde <i class="fa fa-hourglass-half" aria-hidden="true"></i></button>
       </div>
       <div class="col-4 ">
-        <button (click)="!toggleNew() || !toggleInprogress()" (click)="toggleComplatedOrder()"
+        <button (click)="toggleComplatedOrder()"
           style="border-radius: 25px; background-color: #1D4E89; color: floralwhite; width: 150px; height: 40px;">Tamamlanmış <i class="fa fa-hourglass-end" aria-hidden="true"></i></button>
       </div>
     </div>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <button routerLink='/to-dyehouse'
-      style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 150px; height: 40px;">Boyahaneye Gidiş <i class="fa fa-truck" aria-hidden="true"></i></button>
+      style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 180px; height: 40px;">Boyahaneye Gidiş <i class="fa fa-truck" aria-hidden="true"></i></button>
     <button (click)="print()"
       style="border-radius: 25px; background-color:#1D4E89; color: floralwhite; width: 50px; height: 40px;float:right;"><i
         class="fa fa-print" aria-hidden="true"></i></button>

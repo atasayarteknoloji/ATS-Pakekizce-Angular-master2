@@ -10,30 +10,7 @@ import { NeworderDetailService } from './new-order-detail.service';
 export class NewOrderDetailComponent implements OnInit {
 
   constructor(private newOrderDetailService:NeworderDetailService) { }
-  settings = {
-    columns: {
-      orderId:{
-        title:'Sipariş Id',
-        type:'string'
-      },
-      itemId: {
-        title: 'Ürün Id',
-        type: 'number',
-      },
-      itemName: {
-        title: 'Ürün Adı',
-        type: 'string',
-      },
-      quantity:{
-        title:'Miktar',
-        type:'number'
-      },
-      itemUnit:{
-        title:'Ürün Birimi',
-        type:'string'
-      }
-    },
-  };
+ 
   newOrderDetail:NewOrderDetail[];
   ngOnInit() {
     this.getNewOrderDetail();

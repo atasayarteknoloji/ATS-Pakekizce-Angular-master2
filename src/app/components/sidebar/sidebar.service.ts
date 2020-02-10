@@ -20,29 +20,16 @@ export class SidebarService {
       submenus: [
         {
           title: 'Siparişler',
-          routerLink: ROUTING.NEW_ORDER
-        },
-        {
-          title: 'Tamamlanmamış Sipariş',
-          routerLink: ROUTING.UNCOMPLATEORDER
-
-        },
-        {
-          title: 'Tamamlanan Sipariş',
           routerLink: ROUTING.ORDER
-
         }
       ]
     },
     {
       title: 'Sevk',
-      icon: 'fa fa-shopping-cart',
+      icon: 'fas fa-truck',
       active: false,
       type: 'dropdown',
-      badge: {
-        text: '3',
-        class: 'badge-danger'
-      },
+
       submenus: [
         {
           title: 'Products',
@@ -66,8 +53,8 @@ export class SidebarService {
       active: false,
       type: 'simple',
       badge: {
-        text: 'Beta',
-        class: 'badge-primary'
+        text: 'Pro',
+        class: 'badge-danger'
       },
     },
     {

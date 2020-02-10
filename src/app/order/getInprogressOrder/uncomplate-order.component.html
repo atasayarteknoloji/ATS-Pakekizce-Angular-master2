@@ -1,19 +1,46 @@
 <h4 style="font-family: sans-serif; text-align: center; color:#777575;margin:10px;">Tamamlanmamış Sipariş</h4>
 <div class="container p-3 my-3 border"
     style="height: 305px; width: 934px; border-radius: 15px; background-color: white;  ">
-    <div class="sidebar-search">
-        <div>
-            <div class="input-group">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search..."
-                    aria-label="Search">
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </span>
-                </div>
-            </div>
-        </div>
+    <div class="media text-muted pt-3" style="width:100%">
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    Sipariş Id
+                </th>
+                <th>
+                    Oluşturulma Tarihi
+                </th>
+                <th>
+                    Cari Kodu
+                </th>
+                <th>
+                    Statü
+                </th>
+                <th>
+                    Detay
+                </th>
+            </tr>
+            <tr class="item" *ngFor="let order of inprogressOrder ">
+                <span *ngIf="order.order.statu === 1">
+                    <td style="width: 100%;">{{ order.orderId }}</td>
+                    <td style="width: 100%;">{{ order.createTime | date:'dd MM yyyy'}}</td>
+                    <td style="width: 100%;">{{ order.order.client.clientCode}}</td>
+                    <td style="width: 100%;">{{ order.order.statu }}</td>
+                    <td style="width: 100%;"><button (click)="showDetail(order)"
+                            ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
+                    </td>
+                </span>
+            </tr>
+            <tr class="item" *ngFor="let detail of inprogressOrder" [hidden]="isShow">
+                <td>{{detail.item.name}}</td>
+                <td>{{detail.item.color}}</td>
+                <td>{{detail.item.floor}}</td>
+                <td>{{detail.item.rope}}</td>
+                <td>{{detail.item.pattern}}</td>
+                <td>{{detail.item.strike}}</td>
+                <td><img [src]="'data:image/png;base64,' + barcode" /></td>
+            </tr>
+
+        </table>
     </div>
-    <ng2-smart-table class="table table-hover" [settings]="settings" [source]="inprogressOrder" (custom)="customRoute($event)">
-    </ng2-smart-table>
 </div>

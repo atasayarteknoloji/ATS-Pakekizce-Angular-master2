@@ -1,6 +1,7 @@
 export enum ROUTING {
   LOGIN = 'login',
   LOGOUT = 'logout',
+  REGISTER='register',
   FORGOT_PASSWORD = 'forgot-password',
   UNCOMPLATEORDER = 'uncomplate-order',
   NEWORDERDETAIL = 'new-order-detail',

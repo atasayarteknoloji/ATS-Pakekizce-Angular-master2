@@ -12,6 +12,6 @@ export class NeworderService {
   constructor(private http:HttpClient) { }
   
   getData() {
-    return this.http.get<NewOrder[]>(endpoints.ticket.getNewOrder.path);
+    return this.http.get<NewOrder[]>(endpoints.ticket.getOrder.path);
   }
 }

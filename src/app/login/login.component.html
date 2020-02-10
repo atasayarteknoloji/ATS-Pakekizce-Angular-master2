@@ -4,22 +4,19 @@
   </div>
   <div class="row">
     <div class="col-md-8">
-      <img  class="left-background" src="../../assets/img/background.png">
+      <img class="left-background" src="../../assets/img/background.png">
     </div>
     <div class="col-md-4 mt-5">
       <div class="login-card">
         <div class="welcome">Hoşgeldiniz!</div>
-        <div class="text-center">Atasayar servis yazılımıyla servis süreçlerinizi tek bir yerden kolaylıkla yönetin.</div>
+        <div class="text-center">Atasayar servis yazılımıyla servis süreçlerinizi tek bir yerden kolaylıkla yönetin.
+        </div>
         <div class="">
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label class="text-center form-title" for="username">Email</label>
-              <input type="email"
-                     formControlName="username"
-                     class="form-control form-radius"
-                     [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
-                     required
-                     email/>
+              <input type="email" formControlName="username" class="form-control form-radius"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required email />
               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">Lütfen emailinizi giriniz.</div>
                 <div *ngIf="f.username.errors.email">Lütfen uygun formatta bir email giriniz.</div>
@@ -27,8 +24,8 @@
             </div>
             <div class="form-group">
               <label class="text-center form-title" for="password">Şifre</label>
-              <input type="password " formControlName="password" class="form-control form-radius"
-                     [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+              <input type="password" formControlName="password" class="form-control form-radius"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Lütfen şifrenizi giriniz</div>
               </div>
@@ -38,6 +35,11 @@
               Giriş
             </button>
             <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            <div class="form-group">
+              <img *ngIf="loading"
+                src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              <a [routerLink]="['/register']" class="btn btn-link">Kayıt ol</a>
+            </div>
           </form>
         </div>
       </div>

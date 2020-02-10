@@ -1,3 +1,38 @@
-<p>
-  turn-dyehouse works!
-</p>
+<h4 style="font-family: sans-serif; text-align: center;color:#777575; margin: 10px;"> Boyahaneden Dönüş </h4>
+<div class="container p-3 my-3 border"
+  style="height: 305px; width: 934px;  border-radius: 15px; background-color: white; ">
+  <div class="media text-muted pt-3" style="width:100%">
+    <table class="table table-striped">
+      <tr>
+        <th>
+          Sipariş Id
+        </th>
+        <th>
+          Sipariş Statüsü
+        </th>
+        <th>
+          Renk
+        </th>
+        <th>
+          Zemin
+        </th>
+        <th>
+          Barkod
+        </th>
+      </tr>
+      <tr class="item" *ngFor="let data of datas ">
+
+        <td>{{ data.order.id }}</td>
+        <td>{{ data.order.statu}}</td>
+        <td>{{ data.item.color}}</td>
+        <td>{{ data.item.floor }}</td>
+        <td><img [src]="'data:image/png;base64,' + data.item.barcode" /></td>
+        <td>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

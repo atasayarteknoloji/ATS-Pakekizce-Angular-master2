@@ -3,17 +3,59 @@
     style="height: 305px; width: 934px; border-radius: 15px; background-color: white;  ">
     <div class="sidebar-search">
         <div>
-            <div class="input-group">
-                <input class="form-control mr-sm-2" [(ngModel)]="filterText" type="search" placeholder="Search..."
-                    aria-label="Search">
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </span>
-                </div>
-            </div>
         </div>
     </div>
-    <ng2-smart-table class="table table-hover" [settings]="settings" [source]="newOrder" (custom)="customRoute($event)" >
-    </ng2-smart-table>
+    <div class="media text-muted pt-3" style="width:100%">
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    Sipariş Id
+                </th>
+                <th>
+                    Oluşturulma Tarihi
+                </th>
+                <th>
+                    Cari Kodu
+                </th>
+                <th>
+                    Statü
+                </th>
+                <th>
+                    Detay
+                </th>
+            </tr>
+            <tr class="item" *ngFor="let order of newOrder ">
+                
+                    <td *ngIf="order.order.statu === 0">{{ order.order.id }}</td>
+                    <td *ngIf="order.order.statu === 0">{{ order.createTime | date:'dd MM yyyy'}}</td>
+                    <td *ngIf="order.order.statu === 0">{{ order.order.client.clientCode}}</td>
+                    <td *ngIf="order.order.statu === 0">{{ order.order.statu }}</td>
+                    <td *ngIf="order.order.statu === 0"><button (click)="showDetail(order)"
+                            ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
+                    </td>
+            </tr>
+            <tr class="item" *ngFor="let detail of newOrder" [hidden]="isShow">
+                <td>{{detail.item.name}}</td>
+                <td>{{detail.item.color}}</td>
+                <td>{{detail.item.floor}}</td>
+                <td>{{detail.item.rope}}</td>
+                <td>{{detail.item.pattern}}</td>
+                <td>{{detail.item.strike}}</td>
+                <td><img [src]="'data:image/png;base64,' + detail.item.barcode" /></td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
 </div>

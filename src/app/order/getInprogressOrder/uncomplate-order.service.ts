@@ -12,6 +12,6 @@ export class UncomplateOrderService {
 
     constructor(private http:HttpClient) { }
     getData() {
-        return this.http.get<UncomplateOrder[]>(endpoints.ticket.getInProgressOrder.path);
+        return this.http.get<UncomplateOrder[]>(endpoints.ticket.getOrder.path);
     }
 }

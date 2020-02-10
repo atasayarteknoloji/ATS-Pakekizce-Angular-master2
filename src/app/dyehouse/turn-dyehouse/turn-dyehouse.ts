@@ -1,4 +1,4 @@
-export class ToDyehouse{
+export class TurnDyehouse{
     id:number;
     statu:number;
     color:string;

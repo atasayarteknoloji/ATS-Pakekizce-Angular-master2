@@ -16,18 +16,19 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './app.routing';
 import { CreateRequestComponent } from './requests/create-request';
-import { NewOrderComponent } from './order/getNewOrder/new-order.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NewOrderDetailModule } from './order/getNewOrderDetail/new-order-detail.module';;
 import { OrderModule } from './order/order.module';
 import { NewOrderModule } from './order/getNewOrder/new-order.module';
-import { TableFilterPipe } from './order/table-filter/table-filter.pipe';
 import { PrintComponent } from './components/print/print.component';
-import { TurnDyehouseComponent } from './dyehouse/turn-dyehouse/turn-dyehouse.component';
 import { ToDyehouseModule } from './dyehouse/to-dyehouse/to-dyehouse.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UncomplateOrderModule } from './order/getInprogressOrder/uncomplate-order.module';
-
+import { RegisterComponent } from './register/register.component';;
+import { PackagingComponent } from './packaging/packaging.component';
+  ;
+import { BarcodeComponent } from './barcode/barcode.component'
+import { TurnDyehouseModule } from './dyehouse/turn-dyehouse/turn-dyehouse.module';
 
 
 
@@ -52,6 +53,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NewOrderModule,
     FormsModule,
     ToDyehouseModule,
+    TurnDyehouseModule,
     NewOrderDetailModule,
     Ng2SearchPipeModule
   ],
@@ -63,10 +65,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CreateRequestComponent,
     SidebarComponent,
     NavbarComponent,
-    TableFilterPipe,
     PrintComponent,
-    TurnDyehouseComponent
+    RegisterComponent,
+    PackagingComponent,
+    BarcodeComponent
   ],
+
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

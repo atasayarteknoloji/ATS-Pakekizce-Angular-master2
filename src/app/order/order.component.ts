@@ -33,13 +33,19 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
   }
   toggleNew() {
-    this.isShow = !this.isShow;
+    this.isShow = false;
+    this.deneme=true;
+    this.deneme1=true;
   }
   toggleInprogress() {
-    this.deneme = !this.deneme;
+    this.deneme = false;
+    this.isShow=true;
+    this.deneme1=true;
   }
   toggleComplatedOrder(){
-    this.deneme1 =!this.deneme1;
+    this.deneme1 =false;
+    this.isShow=true;
+    this.deneme=true;
   }
   print(){
     window.print();
