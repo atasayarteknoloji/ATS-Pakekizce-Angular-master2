@@ -6,9 +6,7 @@ import { Packaging } from './packaging';
 @Injectable({
   providedIn: 'root'
 })
-export class NeworderService {
-
-
+export class PackagingService {
   constructor(private http:HttpClient) { }
   
   getData() {
