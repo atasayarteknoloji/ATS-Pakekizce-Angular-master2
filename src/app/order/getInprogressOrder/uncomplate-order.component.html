@@ -21,15 +21,15 @@
                 </th>
             </tr>
             <tr class="item" *ngFor="let order of inprogressOrder ">
-                <span *ngIf="order.order.statu === 1">
-                    <td style="width: 100%;">{{ order.orderId }}</td>
-                    <td style="width: 100%;">{{ order.createTime | date:'dd MM yyyy'}}</td>
-                    <td style="width: 100%;">{{ order.order.client.clientCode}}</td>
-                    <td style="width: 100%;">{{ order.order.statu }}</td>
-                    <td style="width: 100%;"><button (click)="showDetail(order)"
+                
+                    <td *ngIf="order.order.statu === 1">{{ order.orderId }}</td>
+                    <td *ngIf="order.order.statu === 1">{{ order.createTime | date:'dd MM yyyy'}}</td>
+                    <td *ngIf="order.order.statu === 1">{{ order.order.client.clientCode}}</td>
+                    <td *ngIf="order.order.statu === 1">{{ order.order.statu }}</td>
+                    <td *ngIf="order.order.statu === 1"><button (click)="showDetail(orderId)"
                             ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
                     </td>
-                </span>
+                
             </tr>
             <tr class="item" *ngFor="let detail of inprogressOrder" [hidden]="isShow">
                 <td>{{detail.item.name}}</td>
@@ -38,7 +38,7 @@
                 <td>{{detail.item.rope}}</td>
                 <td>{{detail.item.pattern}}</td>
                 <td>{{detail.item.strike}}</td>
-                <td><img [src]="'data:image/png;base64,' + barcode" /></td>
+                <td></td>
             </tr>
 
         </table>

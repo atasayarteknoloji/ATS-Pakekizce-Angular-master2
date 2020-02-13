@@ -25,14 +25,14 @@
                 </th>
             </tr>
             <tr class="item" *ngFor="let order of newOrder ">
-                
-                    <td *ngIf="order.order.statu === 0">{{ order.order.id }}</td>
-                    <td *ngIf="order.order.statu === 0">{{ order.createTime | date:'dd MM yyyy'}}</td>
-                    <td *ngIf="order.order.statu === 0">{{ order.order.client.clientCode}}</td>
-                    <td *ngIf="order.order.statu === 0">{{ order.order.statu }}</td>
-                    <td *ngIf="order.order.statu === 0"><button (click)="showDetail(order)"
-                            ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
-                    </td>
+
+                <td *ngIf="order.order.statu === 0">{{ order.order.id }}</td>
+                <td *ngIf="order.order.statu === 0">{{ order.createTime | date:'dd MM yyyy'}}</td>
+                <td *ngIf="order.order.statu === 0">{{ order.order.client.clientCode}}</td>
+                <td *ngIf="order.order.statu === 0">{{ order.order.statu }}</td>
+                <td *ngIf="order.order.statu === 0"><button (click)="showDetail(order)"
+                        ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
+                </td>
             </tr>
             <tr class="item" *ngFor="let detail of newOrder" [hidden]="isShow">
                 <td>{{detail.item.name}}</td>
@@ -41,21 +41,15 @@
                 <td>{{detail.item.rope}}</td>
                 <td>{{detail.item.pattern}}</td>
                 <td>{{detail.item.strike}}</td>
-                <td><img [src]="'data:image/png;base64,' + detail.item.barcode" /></td>
+                <td>{{detail.amount}}</td>
                 <td>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Dropdown button
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                      </div>
+                    <ngx-barcode *ngIf="display"
+                        [bc-value]="[detail.order.id] + [detail.item.rope] +[detail.item.pattern] + [detail.item.strike]"
+                        [bc-element-type]="img" [bc-width]="1" [bc-height]="50"></ngx-barcode>
                 </td>
+                <td><button *ngIf="!display" (click)="generateBarcode()">Barkod Üret</button></td>
             </tr>
-
+            
         </table>
     </div>
 </div>

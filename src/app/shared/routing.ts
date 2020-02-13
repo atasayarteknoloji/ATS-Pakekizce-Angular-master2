@@ -8,5 +8,6 @@ export enum ROUTING {
   NEW_ORDER = 'new-order',
   ORDER = 'order',
   TODYEHOUSE='to-dyehouse',
-  TURNDYEHOUSE='turn-dyehouse'
+  TURNDYEHOUSE='turn-dyehouse',
+  PACKAGING='packaging'
 }

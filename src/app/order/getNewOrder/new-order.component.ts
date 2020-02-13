@@ -5,6 +5,8 @@ import { Router, Routes, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NewOrderDetail } from '../getNewOrderDetail/new-order-detail';
 import { Barcode } from 'src/app/barcode/barcode';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,22 +16,29 @@ import { Barcode } from 'src/app/barcode/barcode';
   providers: [DatePipe]
 })
 export class NewOrderComponent implements OnInit {
-  
+
 
   constructor(private newOrderService: NeworderService,
     private activatedRoute: ActivatedRoute,
     private datePipe: DatePipe,
-    private route: Router,
-    private newOrderDetail: NewOrderDetail) { }
-  deneme: NewOrder[];
+    private newOrderDetail: NewOrderDetail,
+    private formBuilder:FormBuilder) { }
   filterText: string;
   newOrder: NewOrder[];
   isShow = true;
   base64: string;
-  barcode: Barcode[];
+  barcode: string;
+  value: string;
+  display: boolean;
+  form:FormGroup;
   ngOnInit() {
     this.getNewOrder();
-    
+    this.form = this.formBuilder.group({
+      barcode:['',Validators.required]
+    });
+  }
+  get f(){
+    return this.form.controls;
   }
   getNewOrder() {
     this.newOrderService.getData().subscribe(o => {
@@ -45,5 +54,14 @@ export class NewOrderComponent implements OnInit {
   showDetail(newOrder) {
     this.isShow = !this.isShow;
   }
-
-}
+  generateBarcode() {
+    if (this.barcode == '') {
+      this.display = false;
+      return;
+    }
+    else {
+      this.value = this.barcode;
+      this.display = true;
+      }
+    }
+  }

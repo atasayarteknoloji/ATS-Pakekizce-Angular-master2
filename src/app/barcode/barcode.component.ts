@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BarcodeService } from './barcode.service';
+import { Barcode } from './barcode';
 
 @Component({
   selector: 'app-barcode',
@@ -7,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarcodeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-    
+  constructor(private barcodeService:BarcodeService) { }
+  datas:Barcode[];
+  value="";
+  ngOnInit() {}
+  get values():string[]{
+    return this.value.split('\n');
   }
-
 }

@@ -1,3 +1,7 @@
 export class Barcode{
-    barcode:string;
+    id:number;
+    rope:string;
+    pattern:string;
+    strike:string;
+
 }

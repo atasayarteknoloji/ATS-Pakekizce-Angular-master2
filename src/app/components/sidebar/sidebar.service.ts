@@ -21,6 +21,10 @@ export class SidebarService {
         {
           title: 'Siparişler',
           routerLink: ROUTING.ORDER
+        },
+        {
+          title:'Paketleme',
+          routerLink:ROUTING.PACKAGING
         }
       ]
     },

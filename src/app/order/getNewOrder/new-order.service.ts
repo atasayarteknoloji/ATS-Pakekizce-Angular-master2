@@ -14,4 +14,7 @@ export class NeworderService {
   getData() {
     return this.http.get<NewOrder[]>(endpoints.ticket.getOrder.path);
   }
+  postData(barcode:string){
+    return this.http.post<any>(endpoints.ticket.getOrder.path,{barcode});
+  }
 }

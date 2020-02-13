@@ -32,6 +32,9 @@ export class UncomplateOrderComponent implements OnInit {
     console.log('onUserRowSelect', e);
   }
   showDetail(newOrder) {
-    this.isShow = !this.isShow;
+    if(this.inprogressOrder== newOrder){
+      this.isShow = !this.isShow;
+    }
+    
   }
 }

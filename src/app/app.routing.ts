@@ -13,7 +13,7 @@ import { OrderComponent } from './order/order.component';
 import {ToDyehouseComponent} from './dyehouse/to-dyehouse/to-dyehouse.component';
 import { RegisterComponent } from './register/register.component';
 import { TurnDyehouseComponent } from './dyehouse/turn-dyehouse/turn-dyehouse.component';
-
+import { PackagingComponent } from './packaging/packaging.component';
 
 const routes: Routes = [
   {
@@ -60,6 +60,10 @@ const routes: Routes = [
     loadChildren: () => import('./dyehouse/turn-dyehouse/turn-dyehouse.module').then(m => m.TurnDyehouseModule)
   },
   {
+    path: 'packaging',
+    loadChildren: () => import('./packaging/packaging.module').then(m => m.PackagingModule)
+  },
+  {
     path: ROUTING.NEW_ORDER,
     component: NewOrderComponent
   },
@@ -82,6 +86,10 @@ const routes: Routes = [
   {
     path: ROUTING.TURNDYEHOUSE,
     component: TurnDyehouseComponent
+  },
+  {
+    path: ROUTING.PACKAGING,
+    component: PackagingComponent
   },
   // otherwise redirect to home
   {path: '**', redirectTo: ''}

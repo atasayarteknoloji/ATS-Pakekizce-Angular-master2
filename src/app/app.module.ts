@@ -24,12 +24,11 @@ import { PrintComponent } from './components/print/print.component';
 import { ToDyehouseModule } from './dyehouse/to-dyehouse/to-dyehouse.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UncomplateOrderModule } from './order/getInprogressOrder/uncomplate-order.module';
-import { RegisterComponent } from './register/register.component';;
-import { PackagingComponent } from './packaging/packaging.component';
-  ;
+import { RegisterComponent } from './register/register.component';
 import { BarcodeComponent } from './barcode/barcode.component'
 import { TurnDyehouseModule } from './dyehouse/turn-dyehouse/turn-dyehouse.module';
-
+import { NgxBarcodeModule } from 'ngx-barcode';
+import { PackagingModule } from './packaging/packaging.module';
 
 
 
@@ -55,7 +54,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ToDyehouseModule,
     TurnDyehouseModule,
     NewOrderDetailModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxBarcodeModule,
+    PackagingModule
   ],
   declarations: [
     AppComponent,
@@ -67,9 +68,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavbarComponent,
     PrintComponent,
     RegisterComponent,
-    PackagingComponent,
-    BarcodeComponent
-  ],
+    BarcodeComponent],
 
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
