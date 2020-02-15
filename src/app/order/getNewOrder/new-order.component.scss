@@ -1,7 +1,5 @@
 
 @import "~bootstrap/scss/bootstrap";
-
-
 .sidebar-search {
 
     > div {
@@ -44,5 +42,42 @@ body {
   background: rgb(255, 255, 255);
   color: #eee;
  
-  font-family: "Dosis", sans-serif;
+
+}
+
+.ats-card{
+  height: 300px;
+  overflow: auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 rgba(106, 120, 245, 0.15);
+  .card-title{
+    .title{
+      margin-left: 10px;
+      font-size: 23px;
+      font-weight: 500;
+      color: #111111;
+    }
+  }
+}
+
+.ats-margin-top{
+  margin-top: 30px;
+}
+
+.btn-detail{
+  box-shadow: none;
+  border: 1px solid #28a745;
+  color: #28a745;
+  background: white;
+  border-radius: 6px;
+  text-shadow: none;
+  font-size: 15px;
+  padding: 5px 9px;
+}
+
+.btn-detail:hover{
+  background: #28a745;
+  color: white;
 }

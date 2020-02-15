@@ -1,6 +1,5 @@
-
 @import "scss/mixins/size";
-
+@import "~bootstrap/scss/bootstrap";
 .default-theme{
   width: 300px;
   margin-left: 330px;
@@ -8,4 +7,13 @@
 
 .main-page{
   padding-top: 70px;
+}
+
+.ats-navbar{
+  @include media-breakpoint-down(lg){
+    display: block;
+  }
+  @include media-breakpoint-up(lg){
+    display: none;
+  }
 }
