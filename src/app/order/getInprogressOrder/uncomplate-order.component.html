@@ -1,20 +1,18 @@
+<div class="container">
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title ">İşlemde Sipariş</h4>
 
-
-    <div class="container">
-        <div class="main-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header card-header-danger">
-                                <h4 class="card-title ">işlemde</h4>
-                              
-                            </div>
-                            <div class="card-body">
+                        </div>
+                        <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class=" text-primary">
-                            
+
                                         <th>
                                             Sipariş Id
                                         </th>
@@ -30,25 +28,20 @@
                                         <th>
                                             Detay
                                         </th>
-                                      
-                            
-                            
                                     </thead>
                                     <tbody>
-                            
-                            
                                         <tr class="item" *ngFor="let order of inprogressOrder ">
-                            
+
                                             <td *ngIf="order.order.statu === 1">{{ order.orderId }}</td>
-                                            <td *ngIf="order.order.statu === 1">{{ order.createTime | date:'dd MM yyyy'}}</td>
+                                            <td *ngIf="order.order.statu === 1">
+                                                {{ order.createTime | date:'dd MM yyyy'}}</td>
                                             <td *ngIf="order.order.statu === 1">{{ order.order.client.clientCode}}</td>
                                             <td *ngIf="order.order.statu === 1">{{ order.order.statu }}</td>
-                                            <td *ngIf="order.order.statu === 1"><button (click)="showDetail(orderId)"
-                                                    ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
+                                            <td *ngIf="order.order.statu === 1"><button (click)="showDetail()"
+                                                    ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i
+                                                        class="fa fa-eye"></i></button>
                                             </td>
                                         </tr>
-
-
                                         <tr class="item" *ngFor="let detail of inprogressOrder" [hidden]="isShow">
                                             <td>{{detail.item.name}}</td>
                                             <td>{{detail.item.color}}</td>
@@ -58,38 +51,12 @@
                                             <td>{{detail.item.strike}}</td>
                                             <td></td>
                                         </tr>
-                            
                                 </table>
-                            
-                            
-                            
                             </div>
-                            
-                            
-                            
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

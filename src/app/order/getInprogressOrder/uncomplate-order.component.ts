@@ -31,10 +31,6 @@ export class UncomplateOrderComponent implements OnInit {
   customRoute(e) {
     console.log('onUserRowSelect', e);
   }
-  showDetail(newOrder) {
-    if(this.inprogressOrder== newOrder){
-      this.isShow = !this.isShow;
-    }
-    
+  showDetail() {
   }
 }
