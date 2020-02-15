@@ -1,46 +1,95 @@
-<h4 style="font-family: sans-serif; text-align: center; color:#777575;margin:10px;">Tamamlanmamış Sipariş</h4>
-<div class="container p-3 my-3 border"
-    style="height: 305px; width: 934px; border-radius: 15px; background-color: white;  ">
-    <div class="media text-muted pt-3" style="width:100%">
-        <table class="table table-striped">
-            <tr>
-                <th>
-                    Sipariş Id
-                </th>
-                <th>
-                    Oluşturulma Tarihi
-                </th>
-                <th>
-                    Cari Kodu
-                </th>
-                <th>
-                    Statü
-                </th>
-                <th>
-                    Detay
-                </th>
-            </tr>
-            <tr class="item" *ngFor="let order of inprogressOrder ">
-                
-                    <td *ngIf="order.order.statu === 1">{{ order.orderId }}</td>
-                    <td *ngIf="order.order.statu === 1">{{ order.createTime | date:'dd MM yyyy'}}</td>
-                    <td *ngIf="order.order.statu === 1">{{ order.order.client.clientCode}}</td>
-                    <td *ngIf="order.order.statu === 1">{{ order.order.statu }}</td>
-                    <td *ngIf="order.order.statu === 1"><button (click)="showDetail(orderId)"
-                            ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
-                    </td>
-                
-            </tr>
-            <tr class="item" *ngFor="let detail of inprogressOrder" [hidden]="isShow">
-                <td>{{detail.item.name}}</td>
-                <td>{{detail.item.color}}</td>
-                <td>{{detail.item.floor}}</td>
-                <td>{{detail.item.rope}}</td>
-                <td>{{detail.item.pattern}}</td>
-                <td>{{detail.item.strike}}</td>
-                <td></td>
-            </tr>
 
-        </table>
-    </div>
-</div>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title ">işlemde</h4>
+                              
+                            </div>
+                            <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                            
+                                        <th>
+                                            Sipariş Id
+                                        </th>
+                                        <th>
+                                            Oluşturulma Tarihi
+                                        </th>
+                                        <th>
+                                            Cari Kodu
+                                        </th>
+                                        <th>
+                                            Statü
+                                        </th>
+                                        <th>
+                                            Detay
+                                        </th>
+                                      
+                            
+                            
+                                    </thead>
+                                    <tbody>
+                            
+                            
+                                        <tr class="item" *ngFor="let order of inprogressOrder ">
+                            
+                                            <td *ngIf="order.order.statu === 1">{{ order.orderId }}</td>
+                                            <td *ngIf="order.order.statu === 1">{{ order.createTime | date:'dd MM yyyy'}}</td>
+                                            <td *ngIf="order.order.statu === 1">{{ order.order.client.clientCode}}</td>
+                                            <td *ngIf="order.order.statu === 1">{{ order.order.statu }}</td>
+                                            <td *ngIf="order.order.statu === 1"><button (click)="showDetail(orderId)"
+                                                    ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i class="fa fa-eye"></i></button>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="item" *ngFor="let detail of inprogressOrder" [hidden]="isShow">
+                                            <td>{{detail.item.name}}</td>
+                                            <td>{{detail.item.color}}</td>
+                                            <td>{{detail.item.floor}}</td>
+                                            <td>{{detail.item.rope}}</td>
+                                            <td>{{detail.item.pattern}}</td>
+                                            <td>{{detail.item.strike}}</td>
+                                            <td></td>
+                                        </tr>
+                            
+                                </table>
+                            
+                            
+                            
+                            </div>
+                            
+                            
+                            
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

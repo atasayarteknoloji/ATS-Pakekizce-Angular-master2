@@ -13,32 +13,27 @@ import { NewOrderDetail } from './getNewOrderDetail/new-order-detail';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
-  items = [
-    {
-      id: 1,
-      text: "Yeni Sipariş"
-    },
-    {
-      id: 2,
-      text: "Tamamlanmış Sipariş"
-    }
-  ]
+ 
   constructor(private newOrderService: NeworderService,
     private newOrderDetailService: NeworderDetailService) { }
   newOrder: NewOrder[]
   newOrderDetail: NewOrderDetail[];
+  viewModel='toggleNew';
+
+ 
   isShow = false;
   deneme = true;
   deneme1=true;
+  deneme2=true;
   ngOnInit() {
   }
   toggleNew() {
     this.isShow = false;
     this.deneme=true;
-    this.deneme1=true;
+    this.deneme1=true;;
   }
   toggleInprogress() {
-    this.deneme = false;
+    this.deneme = false
     this.isShow=true;
     this.deneme1=true;
   }
@@ -46,6 +41,12 @@ export class OrderComponent implements OnInit {
     this.deneme1 =false;
     this.isShow=true;
     this.deneme=true;
+  }
+  toggledyehouse(){
+    this.deneme2 =false;
+    this.isShow=true;
+    this.deneme=true;
+    this.deneme1=true
   }
   print(){
     window.print();

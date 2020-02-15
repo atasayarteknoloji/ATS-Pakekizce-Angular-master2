@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-uncomplate-order',
   templateUrl: './uncomplate-order.component.html',
-  styleUrls: ['./uncomplate-order.component.sass'],
+  styleUrls: ['./uncomplate-order.component.scss'],
   providers: [DatePipe]
 })
 export class UncomplateOrderComponent implements OnInit {
