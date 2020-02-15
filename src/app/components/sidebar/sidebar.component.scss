@@ -376,7 +376,7 @@
 
           .notification-time {
             font-size: .7rem;
-            color: #828282;
+            color: f#828282;
           }
 
           .notification-detail {
@@ -422,14 +422,14 @@
 $bg-sidebar-wrapper: #1d1d1d;
 $border-color: #131b37;
 $footer-top-border-color: #3a3a3a;
-$color: #bdbdbd;
+$color: #ffffff;
 $header-menu-color: #ffffff; //#6c7b88;
-$hover-color: #ffffff;
+$hover-color: #bdbdbd;
 $shadow-color: #131212;
 $bg-scrollbar: #636363;
 
 // colors with backgound image
-$img-bg-sidebar-wrapper: #2759a6; //rgba(29, 29, 29, 0.8);
+$img-bg-sidebar-wrapper: #1D4E89; //rgba(29, 29, 29, 0.8);
 $img-border-color: rgba(255, 255, 255, 0.1);
 $img-bg-footer: rgba(43, 43, 43, 0.5);
 $img-shadow-color: rgba(0, 0, 0, 0.5);

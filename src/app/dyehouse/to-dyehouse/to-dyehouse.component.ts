@@ -5,7 +5,7 @@ import { ToDyehouse } from './to-dyehouse';
 @Component({
   selector: 'app-to-dyehouse',
   templateUrl: './to-dyehouse.component.html',
-  styleUrls: ['./to-dyehouse.component.sass']
+  styleUrls: ['./to-dyehouse.component.scss']
 })
 export class ToDyehouseComponent implements OnInit {
 

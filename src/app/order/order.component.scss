@@ -1,45 +1,165 @@
-@import "../../scss/ui/_variable.scss";
-@import "../../scss/ui/_mixins";
+
+
 @import "~bootstrap/scss/bootstrap";
-.request-form{
-  padding: 50px 25px;
-  border-radius: 2px;
-  box-shadow: 0 0 10px 0 rgba(106, 120, 245, 0.15);
-  border: solid 1px #eaeaea;
-  background-color: #ffffff;
-  @include media-breakpoint-down(sm){
-    width: 300px;
+
+
+.sidebar-search {
+
+  > div {
+    padding: 10px 20px;
   }
 
-  @include  media-breakpoint-only(md)
-  {
-    width: 500px;
+  .input-group-append .input-group-text {
+    border-left: 0;
+  }
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+margin-top: 0;
+margin-bottom: 0.5rem;
+font-family: sans-serif;
+text-align: center;
+color:#777575;
+margin:10px;
+}
+
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 93vh;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  color: #eee;
+ 
+  font-family: "Dosis", sans-serif;
+}
+
+.underlined-a {
+  text-decoration: none;
+  color: #1D4E89;
+  padding-bottom: 0.15em;
+  padding-left: 0.15em; 
+  padding-right:  0.15em;
+  box-sizing: border-box;
+  box-shadow: inset 0 -0.2em 0 #1D4E89;
+  transition: 0.2s;
+  &:hover {
+    color: #222;
+    box-shadow: inset 0 -2em 0 #1D4E89;
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: #1D4E89;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid #1D4E89;
+  padding: 0.5em 1.5em;
+  width: 98%;
+  display: inline-block;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: rgb(255, 255, 255);
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: rgb(255, 255, 255);
+    height: 0.3em;
+    left: 30%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+ 
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
   }
 
-  @include  media-breakpoint-up(lg)
-  {
-    width: 800px;
-  }
-  .form-header{
-    font-size: 20px;
-    font-weight: 900;
-    text-align: center;
+}
 
-  }
-   .form-row-item{
-     margin-bottom: 15px;
+.card{
+background-color: white;
+max-width: 80rem;
+position: fixed;
 
-     .title{
-       color: #6e7785;
-     }
-   }
+}
 
-    .sbm-button{
-      position: absolute;
-      right: 15px;
-      left: auto;
-      background-color: #2759a6 !important;
-      border-color: #2759a6 !important;
 
+
+.brk-btn-footer {
+  position: relative;
+  background: none;
+  color: #1D4E89;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid #1D4E89;
+  padding: 0.5em 1.5em;
+  width: 90%;
+  display: inline-block;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: rgb(255, 255, 255);
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    
   }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: rgb(255, 255, 255);
+    height: 0.3em;
+    left: 30%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+ 
   }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+
+

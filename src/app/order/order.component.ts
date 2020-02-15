@@ -10,7 +10,7 @@ import { NewOrderDetail } from './getNewOrderDetail/new-order-detail';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
-  styleUrls: ['./order.component.sass']
+  styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
   items = [

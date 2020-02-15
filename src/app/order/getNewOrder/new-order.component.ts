@@ -31,6 +31,7 @@ export class NewOrderComponent implements OnInit {
   value: string;
   display: boolean;
   form:FormGroup;
+  statu=1;
   ngOnInit() {
     this.getNewOrder();
     this.form = this.formBuilder.group({
@@ -62,6 +63,7 @@ export class NewOrderComponent implements OnInit {
     else {
       this.value = this.barcode;
       this.display = true;
+      this.newOrderService.postData(this.statu);
       }
     }
   }

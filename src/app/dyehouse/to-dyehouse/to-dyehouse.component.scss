@@ -1,4 +1,5 @@
 
+
 @import "~bootstrap/scss/bootstrap";
 
 
@@ -34,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -46,3 +46,18 @@ body {
  
   font-family: "Dosis", sans-serif;
 }
+
+.container-n{
+
+  height: 305px;
+  width:  90%;
+  border-radius: 30px;
+  background-color: white;
+}
+
+
+
+
+
+
+
