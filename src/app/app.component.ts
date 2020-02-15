@@ -13,7 +13,6 @@ import {SidebarService} from './components/sidebar/sidebar.service';
 export class AppComponent {
   currentUser: User;
   menus: [];
-
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
