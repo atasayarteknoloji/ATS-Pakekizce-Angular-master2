@@ -10,12 +10,58 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class UncomplateOrderComponent implements OnInit {
-
-
+  settings = {
+    hideSubHeader: true,
+    actions: {
+      position: 'right',
+      columnTitle: '',
+      custom: [
+        {
+          name: 'reminderAction',
+          title: '<i class="fa fa-eye" title="Detay"></i>'
+        }
+      ],
+      add: false,
+      edit: false,
+      delete: false
+    },
+    columns: {
+      id: {
+        title: "Sipariş Id",
+        filter: false
+      },
+      createTime: {
+        title: "Oluşturulma Tarihi",
+        type: "Date",
+        valuePrepareFunction: (createTime) => {
+          return this.datePipe.transform(new Date(createTime), 'dd MM yyyy hh:mm');
+        },
+        filter: false
+      },
+      order: {
+        title: "Cari Kodu",
+        valuePrepareFunction: (order) => {
+          return order.client.clientCode;
+        },
+        filter: false
+      },
+      statu: {
+        title: "Statü",
+        valuePrepareFunction: (statu:any) => {
+          return statu.statu;
+        },
+        filter: false
+      }
+    },
+    pager:
+    {
+      perPage: 10
+    },
+    mode:'external'
+  };
   constructor(
     private uncomplateOrderService: UncomplateOrderService,
-    private datePipe: DatePipe
-  ) { }
+    private datePipe: DatePipe) { }
 
   inprogressOrder: UncomplateOrder[]
   isShow = true;

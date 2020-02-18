@@ -29,6 +29,7 @@ import { BarcodeComponent } from './barcode/barcode.component'
 import { TurnDyehouseModule } from './dyehouse/turn-dyehouse/turn-dyehouse.module';
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { PackagingModule } from './packaging/packaging.module';
+import { ComplatedOrderModule } from './order/getComplatedOrder/complated-order.module';
 
 
 
@@ -56,7 +57,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NewOrderDetailModule,
     Ng2SearchPipeModule,
     NgxBarcodeModule,
-    PackagingModule
+    PackagingModule,
+    ComplatedOrderModule
   ],
   declarations: [
     AppComponent,

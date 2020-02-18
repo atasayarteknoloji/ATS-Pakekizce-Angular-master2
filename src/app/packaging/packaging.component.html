@@ -1,41 +1,15 @@
-<h4 style="font-family: sans-serif; text-align: center; color:#777575;margin:10px;">Paketleme</h4>
-<div class="container p-3 my-3 border"
-    style="height: 305px; width: 934px; border-radius: 15px; background-color: white;  ">
-    <div class="sidebar-search">
-        <div>
+<div class="container">
+    <div class="ats-card">
+      <div class="card-title">
+        <div class="title">
+          Paketleme
         </div>
+      </div>
+      <div class="input-area">
+        <input #search class="search" type="text" placeholder="Aramak istediğiniz veriyi giriniz"
+          (keydown.enter)="onSearch(search.value)">
+      </div>
+      <ng2-smart-table [settings]="settings" [source]="datas">
+      </ng2-smart-table>
     </div>
-    <div class="media text-muted pt-3" style="width:100%">
-        <table class="table table-striped">
-            <tr>
-                <th>
-                    Ürün Adı
-                </th>
-                <th>
-                    Renk
-                </th>
-                <th>
-                    Zemin
-                </th>
-                <th>
-                    İp
-                </th>
-                <th>
-                    Desen
-                </th>
-                <th>
-                  Vuruş
-              </th>
-            </tr>
-            <tr class="item" *ngFor="let data of datas ">
-
-                <td >{{ data.item.name }}</td>
-                <td >{{ data.item.color}}</td>
-                <td >{{ data.item.floor}}</td>
-                <td >{{ data.item.rope }}</td>
-                <td >{{ data.item.pattern }}</td>
-                <td >{{ data.item.strike }}</td>
-            </tr> 
-        </table>
-    </div>
-</div>
+  </div>

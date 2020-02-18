@@ -8,7 +8,54 @@ import { TurnDyehouse } from './turn-dyehouse';
   styleUrls: ['./turn-dyehouse.component.scss']
 })
 export class TurnDyehouseComponent implements OnInit {
-
+  settings = {
+    hideSubHeader: true,
+    actions: {
+      position: 'right',
+      columnTitle: '',
+      custom: [],
+      add: false,
+      edit: false,
+      delete: false
+    },
+    columns: {
+      id: {
+        title: "Sipariş Id",
+        type:"number",
+        filter: false
+      },
+      order: {
+        title: "Statü",
+        valuePrepareFunction: (order) => {
+          return order.statu;
+        },
+        filter: false
+      },
+      item: {
+        title: "Renk",
+        type:"string",
+        valuePrepareFunction: (item) => {
+          return item.color;
+        },
+        filter: false
+      },
+      floor: {
+        title: "Zemin",
+        type:"string",
+        filter: false
+      },
+      barcode: {
+        title: "Barkod",
+        type:"string",
+        filter: false
+      }
+    },
+    pager:
+    {
+      perPage: 10
+    },
+    mode:'external'
+  };
   constructor(private dyehouseService: TurnDyehouseService) { }
   datas: TurnDyehouse[];
   checked: false;

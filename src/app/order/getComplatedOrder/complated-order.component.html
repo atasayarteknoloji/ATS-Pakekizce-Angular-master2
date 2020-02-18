@@ -1,107 +1,54 @@
-
- <div class="container">
-    <div class="main-content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-danger">
-                            <h4 class="card-title ">Tamamlanmış Sipariş</h4>
-                        </div>
-
-                        <div class="sidebar-search">
-                            <div>
-                                <div class="input-group">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Search..."
-                                        aria-label="Search">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-
-                            <div class="table-responsive">
-                                <table class="table">
-                                     <thead class=" text-primary">
-                                    
-                                        <th>
-                                            Sipariş Id
-                                        </th>
-                                        <th>
-                                            Oluşturulma Tarihi
-                                        </th>
-                                        <th>
-                                            Cari Kodu
-                                        </th>
-                                        <th>
-                                            Statü
-                                        </th>
-                                        <th>
-                                            renk
-                                        </th>
-                                        <th>
-                                           desen
-                                        </th>
-                                        <th>
-                                            metre
-                                         </th>
-                                      
-                                
-                                    </thead>
-                                    <tbody>
-            
-                                          
-                                        <tr>
-                                         
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </table>
-               
-                               
-                          </div>
-            
-            
-                     </div>
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<h4 style="font-family: sans-serif; text-align: center; color:#777575;margin:10px;">Tamamlanmış Sipariş</h4>
-<div class="container p-3 my-3 border"
-    style="height: 305px; width: 934px; border-radius: 15px; background-color: white;  ">
-    <div class="sidebar-search">
-        <div>
-            <div class="input-group">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search..."
-                    aria-label="Search">
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </span>
-                </div>
-            </div>
-        </div>
+<div class="ats-card">
+    <div class="card-title">
+      <div class="title">
+        Tamamlanmış Sipariş
+      </div>
     </div>
-    <ng2-smart-table class="table table-hover" [settings]="settings" [source]="inprogressOrder" (custom)="customRoute($event)">
+    <div class="input-area">
+      <input #search class="search" type="text" placeholder="Aramak istediğiniz veriyi giriniz"
+        (keydown.enter)="onSearch(search.value)">
+    </div>
+    <ng2-smart-table [settings]="settings" [source]="complatedOrder" >
     </ng2-smart-table>
-</div>-->
+    <div class="table-responsive">
+  
+    </div>
+  </div>
+  <div class="ats-card ats-margin-top" [hidden]="isShow">
+    <div class="card-title">
+      <div class="title">
+        Sipariş Detayı
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class=" text-primary">
+  
+          <th>
+            Sipariş Id
+          </th>
+          <th>
+            Oluşturulma Tarihi
+          </th>
+          <th>
+            Cari Kodu
+          </th>
+          <th>
+            Statü
+          </th>
+          <th>
+            Detay
+          </th>
+        </thead>
+        <tbody>
+          <tr class="item" *ngFor="let detail of newOrder" [hidden]="isShow">
+            <td>{{detail.item.name}}</td>
+            <td>{{detail.item.color}}</td>
+            <td>{{detail.item.floor}}</td>
+            <td>{{detail.item.rope}}</td>
+            <td>{{detail.item.pattern}}</td>
+            <td>{{detail.item.strike}}</td>
+          </tr>
+      </table>
+    </div>
+  </div>

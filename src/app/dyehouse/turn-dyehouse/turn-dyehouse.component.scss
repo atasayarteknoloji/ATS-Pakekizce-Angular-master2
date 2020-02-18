@@ -1,63 +1,151 @@
-
-
+@import "../../scss/ui/variable";
+@import "../../scss/ui/mixins";
 @import "~bootstrap/scss/bootstrap";
 
+:host /deep/ a:link {}
 
-.sidebar-search {
+:host /deep/ a:hover {}
 
-    > div {
-      padding: 10px 20px;
+:host /deep/ a:focus {}
+
+:host /deep/ table thead tr:nth-child(even) {
+  background: map-get($colors, white) !important;
+}
+
+:host /deep/ table thead {
+  background: map-get($colors, main-blue) !important;
+  color: map-get($colors, white);
+  line-height: size(10px);
+}
+
+:host /deep/ table tbody tr:nth-child(even) {
+  // background: white!important;
+  border-bottom: 1px solid map-get($colors, light-gray);
+
+}
+
+:host /deep/ table tbody tr:nth-child(odd) {
+  // background: map-get($colors,light-gray) !important;
+  border-bottom: 1px solid map-get($colors, light-gray);
+}
+
+:host /deep/ ng2-smart-table-title {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+:host /deep/ ng2-smart-table-title>a {
+  font-size: 14px;
+  color: #111111;
+  font-weight: 500;
+
+}
+
+:host /deep/ ng2-st-tbody-edit-delete {
+  display: flex !important;
+  height: 0 !important;
+}
+
+:host /deep/ th.ng2-smart-actions.ng-star-inserted {
+  width: 125px !important;
+}
+
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+  font-size: 1.1em;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+:host /deep/ table tbody {
+  // background: map-get($colors,light-gray) !important;
+  font-size: 12px;
+}
+
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom:hover {
+  box-shadow: 0 10px 10px 0 rgba(106, 120, 245, 0.15);
+}
+
+
+
+:host /deep/ ng2-st-tbody-custom a:last-child {
+  background: map-get($colors, green);
+
+  color: white;
+  border-radius: 5px;
+
+  i {
+    font-size: 15px;
+  }
+}
+
+.container {
+  padding-left: 5%;
+  padding-bottom: 50px;
+  padding-right: 5%;
+
+  .ats-card {
+    height: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(106, 120, 245, 0.15);
+
+    .input-area {
+      display: flex;
+      justify-content: center;
+
+      .search {
+        width: size(350px);
+        height: size(35px);
+        margin-bottom: size(20px);
+        border-radius: size(20px);
+        box-shadow: 0 0 size(10px) 0 rgba(106, 120, 245, 0.15);
+        border: solid 1px #eaeaea;
+        background-color: map-get($colors, white);
+
+      }
+
+      ::placeholder {
+        padding-left: 30px;
+        opacity: 0.4;
+        font-size: size(14px);
+        color: var(--greyish-brown);
+      }
     }
 
-    .input-group-append .input-group-text {
-      border-left: 0;
+    .card-title {
+      .title {
+        margin-left: 10px;
+        font-size: 23px;
+        font-weight: 500;
+        color: #111111;
+      }
     }
   }
-
-
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-family: sans-serif;
-  text-align: center;
-  color:#777575;
-  margin:10px;
-
-
 }
 
-.item-card
-{
-  
-  position: fixed;
-
-
+.ats-margin-top {
+  margin-top: 30px;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  height: 93vh;
-  justify-content: center;
-  align-items: center;
-  background: rgb(255, 255, 255);
-  color: #eee;
- 
-  font-family: "Dosis", sans-serif;
+.btn-detail {
+  box-shadow: none;
+  border: 1px solid #28a745;
+  color: #28a745;
+  background: white;
+  border-radius: 6px;
+  text-shadow: none;
+  font-size: 15px;
+  padding: 5px 9px;
 }
 
-.container-n{
-
-  height: 305px;
-  width:  90%;
-  border-radius: 30px;
-  background-color: white;
+.btn-detail:hover {
+  background: #28a745;
+  color: white;
 }
-
-
-
-
-
-
-

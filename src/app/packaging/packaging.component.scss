@@ -1,15 +1,12 @@
-@import "../../scss/ui/variable";
-@import "../../scss/ui/mixins";
+@import "../scss/ui/variable";
+@import "../scss/ui/mixins";
 @import "~bootstrap/scss/bootstrap";
 
-:host /deep/ a:link {
-}
+:host /deep/ a:link {}
 
-:host /deep/ a:hover {
-}
+:host /deep/ a:hover {}
 
-:host /deep/ a:focus {
-}
+:host /deep/ a:focus {}
 
 :host /deep/ table thead tr:nth-child(even) {
   background: map-get($colors, white) !important;
@@ -38,7 +35,7 @@
   font-weight: 500;
 }
 
-:host /deep/ ng2-smart-table-title > a {
+:host /deep/ ng2-smart-table-title>a {
   font-size: 14px;
   color: #111111;
   font-weight: 500;
@@ -86,49 +83,58 @@
     font-size: 15px;
   }
 }
-.ats-card{
-  height: auto;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px 0 rgba(106, 120, 245, 0.15);
-  .input-area {
-    display: flex;
-    justify-content: center;
 
-    .search {
-      width: size(350px);
-      height: size(35px);
-      margin-bottom: size(20px);
-      border-radius: size(20px);
-      box-shadow: 0 0 size(10px) 0 rgba(106, 120, 245, 0.15);
-      border: solid 1px #eaeaea;
-      background-color: map-get($colors, white);
+.container {
+  padding-left: 5%;
+  padding-bottom: 50px;
+  padding-right: 5%;
 
+  .ats-card {
+    height: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(106, 120, 245, 0.15);
+
+    .input-area {
+      display: flex;
+      justify-content: center;
+
+      .search {
+        width: size(350px);
+        height: size(35px);
+        margin-bottom: size(20px);
+        border-radius: size(20px);
+        box-shadow: 0 0 size(10px) 0 rgba(106, 120, 245, 0.15);
+        border: solid 1px #eaeaea;
+        background-color: map-get($colors, white);
+
+      }
+
+      ::placeholder {
+        padding-left: 30px;
+        opacity: 0.4;
+        font-size: size(14px);
+        color: var(--greyish-brown);
+      }
     }
 
-    ::placeholder {
-      padding-left: 30px;
-      opacity: 0.4;
-      font-size: size(14px);
-      color: var(--greyish-brown);
-    }
-  }
-  .card-title{
-    .title{
-      margin-left: 10px;
-      font-size: 23px;
-      font-weight: 500;
-      color: #111111;
+    .card-title {
+      .title {
+        margin-left: 10px;
+        font-size: 23px;
+        font-weight: 500;
+        color: #111111;
+      }
     }
   }
 }
 
-.ats-margin-top{
+.ats-margin-top {
   margin-top: 30px;
 }
 
-.btn-detail{
+.btn-detail {
   box-shadow: none;
   border: 1px solid #28a745;
   color: #28a745;
@@ -139,7 +145,7 @@
   padding: 5px 9px;
 }
 
-.btn-detail:hover{
+.btn-detail:hover {
   background: #28a745;
   color: white;
 }

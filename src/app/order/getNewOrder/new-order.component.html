@@ -4,42 +4,14 @@
       Yeni Sipariş
     </div>
   </div>
+  <div class="input-area">
+    <input #search class="search" type="text" placeholder="Aramak istediğiniz veriyi giriniz"
+      (keydown.enter)="onSearch(search.value)">
+  </div>
+  <ng2-smart-table [settings]="settings" [source]="newOrder" >
+  </ng2-smart-table>
   <div class="table-responsive">
-    <table class="table">
-      <thead class=" text-primary">
 
-      <th>
-        Sipariş Id
-      </th>
-      <th>
-        Oluşturulma Tarihi
-      </th>
-      <th>
-        Cari Kodu
-      </th>
-      <th>
-        Statü
-      </th>
-      <th>
-
-      </th>
-
-      </thead>
-      <tbody>
-      <!-- <ng-container  *ngIf="order.order.statu===0">-->
-      <tr class="item" *ngFor="let order of newOrder">
-        <td *ngIf="order.order.statu === 0">{{ order.orderId }}</td>
-        <td *ngIf="order.order.statu === 0">{{ order.createTime | date:'dd MM yyyy'}}</td>
-        <td *ngIf="order.order.statu === 0">{{ order.order.client.clientCode}}</td>
-        <td *ngIf="order.order.statu === 0">{{ order.order.statu }}</td>
-        <td *ngIf="order.order.statu === 0">
-          <button class="btn-detail"
-                  (click)="showDetail(order)"
-                  ng-bind="order.showDetail ? 'Gizle' : 'Göster'"><i
-            class="fa fa-eye"></i></button>
-        </td>
-      </tr>
-    </table>
   </div>
 </div>
 <div class="ats-card ats-margin-top" [hidden]="isShow">
@@ -52,32 +24,31 @@
     <table class="table">
       <thead class=" text-primary">
 
-      <th>
-        Sipariş Id
-      </th>
-      <th>
-        Oluşturulma Tarihi
-      </th>
-      <th>
-        Cari Kodu
-      </th>
-      <th>
-        Statü
-      </th>
-      <th>
-        Detay
-      </th>
+        <th>
+          Sipariş Id
+        </th>
+        <th>
+          Oluşturulma Tarihi
+        </th>
+        <th>
+          Cari Kodu
+        </th>
+        <th>
+          Statü
+        </th>
+        <th>
+          Detay
+        </th>
       </thead>
       <tbody>
-      <tr class="item" *ngFor="let detail of newOrder" [hidden]="isShow">
-        <td>{{detail.item.name}}</td>
-        <td>{{detail.item.color}}</td>
-        <td>{{detail.item.floor}}</td>
-        <td>{{detail.item.rope}}</td>
-        <td>{{detail.item.pattern}}</td>
-        <td>{{detail.item.strike}}</td>
-      </tr>
+        <tr class="item" *ngFor="let detail of newOrder" [hidden]="isShow">
+          <td>{{detail.item.name}}</td>
+          <td>{{detail.item.color}}</td>
+          <td>{{detail.item.floor}}</td>
+          <td>{{detail.item.rope}}</td>
+          <td>{{detail.item.pattern}}</td>
+          <td>{{detail.item.strike}}</td>
+        </tr>
     </table>
   </div>
 </div>
-

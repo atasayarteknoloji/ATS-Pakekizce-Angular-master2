@@ -14,13 +14,21 @@ export class SidebarService {
     {
       title: 'Siparişler',
       icon: 'fa fa-edit',
-      active: false,
+      active: true,
       type: 'dropdown',
       
       submenus: [
         {
           title: 'Siparişler',
           routerLink: ROUTING.ORDER
+        },
+        {
+          title: 'Boyahaneye Gidiş',
+          routerLink: ROUTING.TODYEHOUSE
+        },
+        {
+          title: 'Boyahaneden Dönüş',
+          routerLink: ROUTING.TURNDYEHOUSE
         },
         {
           title:'Paketleme',

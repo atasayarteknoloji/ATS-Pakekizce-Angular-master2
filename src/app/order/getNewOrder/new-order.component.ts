@@ -7,6 +7,8 @@ import { NewOrderDetail } from '../getNewOrderDetail/new-order-detail';
 import { Barcode } from 'src/app/barcode/barcode';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LocalDataSource } from 'ng2-smart-table';
+import { parse } from 'querystring';
 
 
 @Component({
@@ -16,13 +18,62 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   providers: [DatePipe]
 })
 export class NewOrderComponent implements OnInit {
-
-
+  settings = {
+    hideSubHeader: true,
+    actions: {
+      position: 'right',
+      columnTitle: '',
+      custom: [
+        {
+          name: 'deleteAction',
+          title: '<i class="fa fa-eye" title="Detay"></i>'
+        }
+      ],
+      add: false,
+      edit: false,
+      delete: false
+    },
+    columns: {
+      id: {
+        title: "Sipariş Id",
+        filter: false
+      },
+      createTime: {
+        title: "Oluşturulma Tarihi",
+        type: "Date",
+        valuePrepareFunction: (createTime) => {
+          return this.datePipe.transform(new Date(createTime), 'dd MM yyyy hh:mm');
+        },
+        filter: false
+      },
+      order: {
+        title: "Cari Kodu",
+        valuePrepareFunction: (order) => {
+          return order.client.clientCode;
+        },
+        filter: false
+      },
+      statu: {
+        title: "Statü",
+        valuePrepareFunction: (statu:any) => {
+          return statu.statu;
+        },
+        filter: false
+      }
+    },
+    pager:
+    {
+      perPage: 10
+    },
+    mode:'external'
+  };
   constructor(private newOrderService: NeworderService,
     private activatedRoute: ActivatedRoute,
     private datePipe: DatePipe,
     private newOrderDetail: NewOrderDetail,
-    private formBuilder:FormBuilder) { }
+    private formBuilder: FormBuilder) {
+    this.source = new LocalDataSource(this.newOrder)
+  }
   filterText: string;
   newOrder: NewOrder[];
   isShow = true;
@@ -30,20 +81,16 @@ export class NewOrderComponent implements OnInit {
   barcode: string;
   value: string;
   display: boolean;
-  form:FormGroup;
-  statu=1;
+  form: FormGroup;
+  statu = 1;
+  source: LocalDataSource;
   ngOnInit() {
     this.getNewOrder();
-    this.form = this.formBuilder.group({
-      barcode:['',Validators.required]
-    });
   }
-  get f(){
-    return this.form.controls;
-  }
+
   getNewOrder() {
-    this.newOrderService.getData().subscribe(o => {
-      this.newOrder = o;
+    this.newOrderService.getData().subscribe(data => {
+      this.newOrder = data;
     });
   }
   customRoute(e) {
@@ -64,6 +111,27 @@ export class NewOrderComponent implements OnInit {
       this.value = this.barcode;
       this.display = true;
       this.newOrderService.postData(this.statu);
-      }
     }
   }
+  onSearch(query: string = '') {
+    this.source.setFilter([
+      // fields we want to include in the search
+      {
+        field: 'id',
+        search: query
+      },
+      {
+        field: 'createTime',
+        search: query
+      },
+      {
+        field: 'clientCode',
+        search: query
+      },
+      {
+        field: 'statu',
+        search: query
+      }
+    ], false);
+  }
+}
