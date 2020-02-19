@@ -1,0 +1,21 @@
+.container {
+  background-color: white;
+  width: 150px;
+  border-bottom-style: dashed;
+  .row {
+    margin-bottom: auto;
+    font-size: 10px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+    .item {
+        margin: auto;
+        margin-bottom:20px ;
+      tr {
+        border: 1px solid black;
+      }
+    }
+
+  }
+}

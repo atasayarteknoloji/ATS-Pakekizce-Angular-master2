@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {NeworderService} from './getNewOrder/new-order.service';
-import {NewOrder} from './getNewOrder/new-order';
-import {NeworderDetailService} from './getNewOrderDetail/new-order-detail.service';
-import {NewOrderDetail} from './getNewOrderDetail/new-order-detail';
+import { Component, OnInit } from '@angular/core';
+import { NeworderService } from './getNewOrder/new-order.service';
+import { NewOrder } from './getNewOrder/new-order';
+import { NeworderDetailService } from './getNewOrderDetail/new-order-detail.service';
+import { NewOrderDetail } from './getNewOrderDetail/new-order-detail';
+import { PrintService } from '../components/print/print.service';
 
 @Component({
   selector: 'app-order',
@@ -25,7 +26,7 @@ export class OrderComponent implements OnInit {
   deneme2 = true;
 
   constructor(private newOrderService: NeworderService,
-              private newOrderDetailService: NeworderDetailService) {
+    private newOrderDetailService: NeworderDetailService) {
   }
 
   ngOnInit() {
@@ -65,8 +66,5 @@ export class OrderComponent implements OnInit {
     this.deneme1 = true;
   }
 
-  print() {
-    window.print();
-  }
 
 }

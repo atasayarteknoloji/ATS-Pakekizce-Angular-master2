@@ -1,16 +1,36 @@
-<table>
-  <thead><tr><td>
-    <div class="header-space">&nbsp;</div>
-  </td></tr></thead>
-  <tbody><tr><td>
-    <div class="content">
-      <router-outlet></router-outlet>
-    </div>
-  </td></tr></tbody>
-  <tfoot><tr><td>
-    <div class="footer-space">&nbsp;</div>
-  </td></tr></tfoot>
-</table>
-
-<div class="header">COOL HEADER</div>
-<div class="footer">AWESOME FOOTER</div>
+<div class="container"  *ngFor="let data of datas">
+  <div class="row">
+    DESEN<ngx-barcode
+    [bc-value]="[data.item.pattern]"
+    [bc-element-type]="svg" [bc-width]="0.8" [bc-height]="20" [bc-display-value]="[data.item.pattern]" 
+    [bc-font-size]="10"
+    ></ngx-barcode>
+  </div>
+  <div class="row">
+    MÜŞTERİ<ngx-barcode
+    [bc-value]="[data.order.client.clientCode]"
+    [bc-element-type]="svg" [bc-width]="0.8" [bc-height]="20" [bc-display-value]="[data.order.client.clientCode]" 
+    [bc-font-size]="10" [bc-margin]="5"></ngx-barcode>
+  </div>
+  <div class="row">
+    <table class="item">
+      <td>
+        <tr>MAKİNE NO : </tr>
+        <tr>DESEN NO  : </tr>
+        <tr>LOGO      : YOK</tr>
+        <tr>KUPON NO  : 6 / 15</tr>
+        <tr>RENK      : {{data.item.color}}</tr>
+        <tr>METRE     : {{data.amount}}</tr>
+        <tr>İP        : {{data.item.rope}}</tr>
+        <tr>KUMAŞ     : {{data.item.pattern}}</tr>
+        <tr>SİP.TARİHİ: {{data.order.createTime |  date:'dd MM yyyy'}}</tr>
+        <tr>MÜŞTERİ   : {{data.order.client.clientCode}}</tr>
+        <tr>TARİH     : </tr>
+        <tr>OPERATOR  : </tr>
+        <tr>1.KONTROL : </tr>
+        <tr>NAKIŞ     : </tr>
+        <tr>2.KONTROL : </tr>
+      </td>
+  </table>
+  </div>
+</div>
