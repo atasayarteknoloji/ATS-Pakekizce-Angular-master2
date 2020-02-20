@@ -49,6 +49,7 @@
 
 :host /deep/ th.ng2-smart-actions.ng-star-inserted {
   width: 125px !important;
+  color: #111111;
 }
 
 
@@ -73,7 +74,7 @@
 
 
 
-:host /deep/ ng2-st-tbody-custom a:last-child {
+:host /deep/ ng2-st-tbody-custom {
   background: map-get($colors, green);
 
   color: white;

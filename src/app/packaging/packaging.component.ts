@@ -15,7 +15,7 @@ export class PackagingComponent implements OnInit {
       columnTitle: 'Barkod',
       custom: [{
         name:'Barkod',
-        title:'<ngx-barcode [bc-value]="GIZEM" [bc-element-type]="img" [bc-width]="1" [bc-height]="50"></ngx-barcode>'
+        title:'<ngx-barcode [bc-value]="GIZEM" [bc-element-type]="img" [bc-width]="1" [bc-height]="50" [bc-line-color]="#111111"></ngx-barcode>'
       }],
       add: false,
       edit: false,

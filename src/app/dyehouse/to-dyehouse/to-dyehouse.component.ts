@@ -12,8 +12,11 @@ export class ToDyehouseComponent implements OnInit {
     hideSubHeader: true,
     actions: {
       position: 'right',
-      columnTitle: '',
-      custom: [],
+      columnTitle: 'Barkod',
+      custom: [{
+        name:'Barkod',
+        title:'<ngx-barcode [bc-value]="GIZEM" [bc-element-type]="img" [bc-width]="1" [bc-height]="50" [bc-line-color]="#111111"></ngx-barcode>'
+      }],
       add: false,
       edit: false,
       delete: false
@@ -41,11 +44,6 @@ export class ToDyehouseComponent implements OnInit {
       },
       floor: {
         title: "Zemin",
-        type:"string",
-        filter: false
-      },
-      barcode: {
-        title: "Barkod",
         type:"string",
         filter: false
       }
