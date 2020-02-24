@@ -58,7 +58,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     Ng2SearchPipeModule,
     NgxBarcodeModule,
     PackagingModule,
-    ComplatedOrderModule,
+    ComplatedOrderModule
   ],
   declarations: [
     AppComponent,

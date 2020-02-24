@@ -4,7 +4,7 @@ import { ComplatedOrderRoutingModule } from './complated-order-routing';
 import { ComplatedOrderComponent } from './complated-order.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { FormsModule } from '@angular/forms';
-import { NewOrderDetail } from '../getNewOrderDetail/new-order-detail';
+import { NewOrderDetail } from '../model/new-order-detail';
 
 
 

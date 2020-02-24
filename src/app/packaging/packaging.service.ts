@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { endpoints } from 'src/app/shared/endpoints';
-import { Packaging } from './packaging';
+import { Packaging } from '../order/model/packaging';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,6 @@ export class PackagingService {
   constructor(private http:HttpClient) { }
   
   getData() {
-    return this.http.get<Packaging[]>(endpoints.ticket.getOrder.path);
+    return this.http.get<Packaging[]>(endpoints.ticket.getBeforeClose.path);
   }
 }

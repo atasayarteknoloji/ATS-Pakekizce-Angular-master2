@@ -1,17 +1,21 @@
 .container {
   background-color: white;
-  width: 150px;
+  width: 100%;
   border-bottom-style: dashed;
+
+
   .row {
     margin-bottom: auto;
     font-size: 10px;
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     .item {
-        margin: auto;
-        margin-bottom:20px ;
+      margin: auto;
+      margin-bottom: 20px;
+
       tr {
         border: 1px solid black;
       }

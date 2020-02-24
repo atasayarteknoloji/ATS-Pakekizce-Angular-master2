@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NeworderService } from './new-order.service';
-import { NewOrder } from './new-order';
+import { NewOrder } from '../model/new-order';
 import { Router, Routes, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { NewOrderDetail } from '../getNewOrderDetail/new-order-detail';
+import { NewOrderDetail } from '../model/new-order-detail';
 import { Barcode } from 'src/app/barcode/barcode';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LocalDataSource } from 'ng2-smart-table';
 import { parse } from 'querystring';
+import { NewOrderDetailComponent } from '../getNewOrderDetail/new-order-detail.component';
 
 
 @Component({
@@ -18,6 +19,16 @@ import { parse } from 'querystring';
   providers: [DatePipe]
 })
 export class NewOrderComponent implements OnInit {
+  filterText: string;
+  newOrder: NewOrder[]=[];
+  isShow = true;
+  base64: string;
+  barcode: string;
+  value: string;
+  display: boolean;
+  form: FormGroup;
+  statu = 1;
+  source: LocalDataSource =new LocalDataSource();
   settings = {
     hideSubHeader: true,
     actions: {
@@ -46,18 +57,15 @@ export class NewOrderComponent implements OnInit {
         },
         filter: false
       },
-      order: {
+      client: {
         title: "Cari Kodu",
-        valuePrepareFunction: (order) => {
-          return order.client.clientCode;
+        valuePrepareFunction: (client) => {
+          return client.clientCode;
         },
         filter: false
       },
-      statu: {
+      statusId: {
         title: "Statü",
-        valuePrepareFunction: (statu:any) => {
-          return statu.statu;
-        },
         filter: false
       }
     },
@@ -72,25 +80,18 @@ export class NewOrderComponent implements OnInit {
     private datePipe: DatePipe,
     private newOrderDetail: NewOrderDetail,
     private formBuilder: FormBuilder) {
-    this.source = new LocalDataSource(this.newOrder)
+      this.getNewOrder();
   }
-  filterText: string;
-  newOrder: NewOrder[];
-  isShow = true;
-  base64: string;
-  barcode: string;
-  value: string;
-  display: boolean;
-  form: FormGroup;
-  statu = 1;
-  source: LocalDataSource;
+
   ngOnInit() {
-    this.getNewOrder();
+    console.log("init", this.source);
   }
 
   getNewOrder() {
     this.newOrderService.getData().subscribe(data => {
       this.newOrder = data;
+      this.source.load(data);
+      console.log(" this.newOrder",  this.source);
     });
   }
   customRoute(e) {

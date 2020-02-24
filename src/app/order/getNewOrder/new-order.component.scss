@@ -1,97 +1,15 @@
 @import "../../scss/ui/variable";
 @import "../../scss/ui/mixins";
 @import "~bootstrap/scss/bootstrap";
+@import "../../scss/ui/_ngTable";
 
-:host /deep/ a:link {
-}
-
-:host /deep/ a:hover {
-}
-
-:host /deep/ a:focus {
-}
-
-:host /deep/ table thead tr:nth-child(even) {
-  background: map-get($colors, white) !important;
-}
-
-:host /deep/ table thead {
-  background: map-get($colors, main-blue) !important;
-  color: map-get($colors, white);
-  line-height: size(10px);
-}
-
-:host /deep/ table tbody tr:nth-child(even) {
-  // background: white!important;
-  border-bottom: 1px solid map-get($colors, light-gray);
-
-}
-
-:host /deep/ table tbody tr:nth-child(odd) {
-  // background: map-get($colors,light-gray) !important;
-  border-bottom: 1px solid map-get($colors, light-gray);
-}
-
-:host /deep/ ng2-smart-table-title {
-  font-size: 14px;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-:host /deep/ ng2-smart-table-title > a {
-  font-size: 14px;
-  color: #111111;
-  font-weight: 500;
-
-}
-
-:host /deep/ ng2-st-tbody-edit-delete {
-  display: flex !important;
-  height: 0 !important;
-}
-
-:host /deep/ th.ng2-smart-actions.ng-star-inserted {
-  width: 125px !important;
-}
-
-
-:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
-  display: inline-block;
-  width: 25px;
-  text-align: center;
-  font-size: 1.1em;
-  margin-left: 5px;
-  font-size: 12px;
-}
-
-:host /deep/ table tbody {
-  // background: map-get($colors,light-gray) !important;
-  font-size: 12px;
-}
-
-
-:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom:hover {
-  box-shadow: 0 10px 10px 0 rgba(106, 120, 245, 0.15);
-}
-
-
-
-:host /deep/ ng2-st-tbody-custom a:last-child {
-  background: map-get($colors, green);
-
-  color: white;
-  border-radius: 5px;
-
-  i {
-    font-size: 15px;
-  }
-}
-.ats-card{
+.ats-card {
   height: auto;
   background: #ffffff;
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 0 10px 0 rgba(106, 120, 245, 0.15);
+
   .input-area {
     display: flex;
     justify-content: center;
@@ -114,8 +32,9 @@
       color: var(--greyish-brown);
     }
   }
-  .card-title{
-    .title{
+
+  .card-title {
+    .title {
       margin-left: 10px;
       font-size: 23px;
       font-weight: 500;
@@ -124,11 +43,11 @@
   }
 }
 
-.ats-margin-top{
+.ats-margin-top {
   margin-top: 30px;
 }
 
-.btn-detail{
+.btn-detail {
   box-shadow: none;
   border: 1px solid #28a745;
   color: #28a745;
@@ -139,7 +58,7 @@
   padding: 5px 9px;
 }
 
-.btn-detail:hover{
+.btn-detail:hover {
   background: #28a745;
   color: white;
 }

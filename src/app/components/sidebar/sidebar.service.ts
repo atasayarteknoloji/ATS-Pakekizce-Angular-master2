@@ -53,27 +53,6 @@ export class SidebarService {
           title: 'Credit cart'
         }
       ]
-    },
-
-    {
-      title: 'Ekstra',
-      type: 'header'
-    },
-    {
-      title: 'Dokümantasyon',
-      icon: 'fa fa-book',
-      active: false,
-      type: 'simple',
-      badge: {
-        text: 'Pro',
-        class: 'badge-danger'
-      },
-    },
-    {
-      title: 'Takvim',
-      icon: 'fa fa-calendar',
-      active: false,
-      type: 'simple'
     }
   ];
 

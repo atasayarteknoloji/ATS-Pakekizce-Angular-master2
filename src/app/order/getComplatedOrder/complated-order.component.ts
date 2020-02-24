@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { ComplatedOrder } from './complated-order';
+import { ComplatedOrder } from '../model/complated-order';
 import { ComplatedOrderService } from './complated-order.service';
 
 @Component({
@@ -38,18 +38,15 @@ export class ComplatedOrderComponent implements OnInit {
         },
         filter: false
       },
-      order: {
+      client: {
         title: "Cari Kodu",
-        valuePrepareFunction: (order) => {
-          return order.client.clientCode;
+        valuePrepareFunction: (client) => {
+          return client.clientCode;
         },
         filter: false
       },
-      statu: {
+      statusId: {
         title: "Statü",
-        valuePrepareFunction: (statu:any) => {
-          return statu.statu;
-        },
         filter: false
       }
     },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TurnDyehouseService } from './turn-dyehouse.service';
-import { TurnDyehouse } from './turn-dyehouse';
+import { TurnDyehouse } from '../../order/model/turn-dyehouse';
 
 @Component({
   selector: 'app-turn-dyehouse',
@@ -27,24 +27,27 @@ export class TurnDyehouseComponent implements OnInit {
         type:"number",
         filter: false
       },
-      order: {
+      statusId: {
         title: "Statü",
-        valuePrepareFunction: (order) => {
-          return order.statu;
+        valuePrepareFunction: (cell,row) => {
+          return  row.order.statusId;
         },
         filter: false
       },
-      item: {
+      color: {
         title: "Renk",
         type:"string",
-        valuePrepareFunction: (item) => {
-          return item.color;
+        valuePrepareFunction: (cell,row) => {
+          return row.item.color;
         },
         filter: false
       },
       floor: {
         title: "Zemin",
         type:"string",
+        valuePrepareFunction: (cell,row) => {
+          return row.item.floor;
+        },
         filter: false
       }
     },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UncomplateOrderService } from './uncomplate-order.service';
-import { UncomplateOrder } from './uncomplate-order';
+import { UncomplateOrder } from '../model/uncomplate-order';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -38,18 +38,15 @@ export class UncomplateOrderComponent implements OnInit {
         },
         filter: false
       },
-      order: {
+      client: {
         title: "Cari Kodu",
-        valuePrepareFunction: (order) => {
-          return order.client.clientCode;
+        valuePrepareFunction: (client) => {
+          return client.clientCode;
         },
         filter: false
       },
-      statu: {
+      statusId: {
         title: "Statü",
-        valuePrepareFunction: (statu:any) => {
-          return statu.statu;
-        },
         filter: false
       }
     },
@@ -63,7 +60,7 @@ export class UncomplateOrderComponent implements OnInit {
     private uncomplateOrderService: UncomplateOrderService,
     private datePipe: DatePipe) { }
 
-  inprogressOrder: UncomplateOrder[]
+  inprogressOrder: UncomplateOrder[] =[];
   isShow = true;
 
   ngOnInit() {

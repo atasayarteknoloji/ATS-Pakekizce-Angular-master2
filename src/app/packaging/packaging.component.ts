@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackagingService } from './packaging.service';
-import { Packaging } from './packaging';
+import { Packaging } from '../order/model/packaging';
 
 @Component({
   selector: 'app-packaging',
@@ -22,37 +22,52 @@ export class PackagingComponent implements OnInit {
       delete: false
     },
     columns: {
-      item: {
+      name: {
         title: "isim",
         type:"number",
-        valuePrepareFunction: (item) => {
-          return item.name;
+        valuePrepareFunction: (cell,row) => {
+          return row.item.name;
         },
         filter: false
       },
       color: {
         title: "Renk",
         type:"string",
+        valuePrepareFunction: (cell,row) => {
+          return row.item.color;
+        },
         filter: false
       },
       floor: {
         title: "Zemin",
         type:"string",
+        valuePrepareFunction: (cell,row) => {
+          return row.item.floor;
+        },
         filter: false
       },
       rope: {
         title: "İp",
         type:"string",
+        valuePrepareFunction: (cell,row) => {
+          return row.item.rope;
+        },
         filter: false
       },
       pattern: {
         title: "Desen",
         type:"string",
+        valuePrepareFunction: (cell,row) => {
+          return row.item.pattern;
+        },
         filter: false
       },
       strike: {
         title: "Vuruş",
         type:"string",
+        valuePrepareFunction: (cell,row) => {
+          return row.item.strike;
+        },
         filter: false
       }
     },

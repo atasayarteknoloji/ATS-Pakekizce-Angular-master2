@@ -1,6 +1,6 @@
 export class ComplatedOrder{
     id:string;
     createTime:Date;
-    clientCode:string;
-    statu:number;
+    client:string;
+    statusId:number;
 }

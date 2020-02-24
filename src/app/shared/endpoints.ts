@@ -5,24 +5,34 @@ export const endpoints = {
   users: {
     authenticate: {
       //path: servers.postmanMock + '/users/authenticate'
-      path: servers.real + '/Auth/login'
+      path: servers.real + '/Authentication/login'
     },
     //path: servers.postmanMock + '/users'
-    path: servers.real + '/Auth'
+    path: servers.real + '/Authentication'
 
   },
   ticket: {
     getNewOrder: {
-      //path: servers.postmanMock + '/getNewOrder'
+      path: servers.real + '/orders/getneworder'
     },
     getInProgressOrder: {
-      //path: servers.postmanMock + '/getInprogressOrder'
+      path: servers.real + '/orders/getinprogressorder'
     },
-    getNewOrderDetail: {
-      //path: servers.postmanMock + '/getNewOrderDetail'
+    getComplatedOrder: {
+      path: servers.real + '/orders/getcompletedorder'
+    },
+    getBeforeDyehouse:{
+      path: servers.real + '/orderdetails/getbeforedyeing'
+    },
+    getAfterDyehouse:{
+      path: servers.real + '/orderdetails/getafterdyeing'
+    },
+    getBeforeClose:{
+      path: servers.real + '/orderdetails/getbeforeclose'
     },
     getOrder:{
-      path:servers.postmanMock + '/getOrder'
+      //path:servers.postmanMock + '/getOrder'
+      path:servers.real + '/orders/getneworder'
     }
   }
 };

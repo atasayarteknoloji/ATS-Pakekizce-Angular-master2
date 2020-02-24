@@ -26,10 +26,14 @@
   color: white;
 }
 
-.container{
-  padding-left: 5%;
-  padding-bottom: 50px;
-  padding-right: 5%;
+.order-container{
+  padding: 0 50px;
+  @include media-breakpoint-down(md) {
+    
+    }
+  @include media-breakpoint-up(md) { 
+    margin-left: 215px;
+   }
 }
 
 
