@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class NeworderService {
 
-
   constructor(private http:HttpClient) { }
   
   getData() {

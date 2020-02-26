@@ -1,0 +1,10 @@
+@import "../../scss/ui/variable";
+@import "../../scss/ui/mixins";
+.button{
+    background: map-get($colors, green);
+    width:25px ;
+    height: 25px;
+    color: white;
+    border-radius: size(5px);
+    
+}

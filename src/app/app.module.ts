@@ -29,7 +29,8 @@ import { BarcodeComponent } from './barcode/barcode.component'
 import { TurnDyehouseModule } from './dyehouse/turn-dyehouse/turn-dyehouse.module';
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { PackagingModule } from './packaging/packaging.module';
-import { ComplatedOrderModule } from './order/getComplatedOrder/complated-order.module';
+import { ComplatedOrderModule } from './order/getComplatedOrder/complated-order.module';;
+import { ButtonViewComponent } from './components/button-view/button-view.component'
 
 
 
@@ -70,8 +71,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavbarComponent,
     PrintComponent,
     RegisterComponent,
-    BarcodeComponent],
-
+    BarcodeComponent,
+    ButtonViewComponent
+  ],
+  entryComponents:[
+    ButtonViewComponent
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

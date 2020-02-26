@@ -1,5 +1,5 @@
 export class NewOrderDetail{
-    orderId:string;
+    id:number;
     itemId : number;
     itemName:string;
     quantity:number;

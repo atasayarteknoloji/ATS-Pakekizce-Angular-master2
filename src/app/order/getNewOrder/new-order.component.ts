@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LocalDataSource } from 'ng2-smart-table';
 import { parse } from 'querystring';
 import { NewOrderDetailComponent } from '../getNewOrderDetail/new-order-detail.component';
+import { ButtonViewComponent } from 'src/app/components/button-view/button-view.component';
 
 
 @Component({
@@ -20,7 +21,7 @@ import { NewOrderDetailComponent } from '../getNewOrderDetail/new-order-detail.c
 })
 export class NewOrderComponent implements OnInit {
   filterText: string;
-  newOrder: NewOrder[]=[];
+  newOrder: NewOrder[] = [];
   isShow = true;
   base64: string;
   barcode: string;
@@ -28,22 +29,10 @@ export class NewOrderComponent implements OnInit {
   display: boolean;
   form: FormGroup;
   statu = 1;
-  source: LocalDataSource =new LocalDataSource();
+  source: LocalDataSource = new LocalDataSource();
   settings = {
     hideSubHeader: true,
-    actions: {
-      position: 'right',
-      columnTitle: '',
-      custom: [
-        {
-          name: 'deleteAction',
-          title: '<i class="fa fa-eye" title="Detay"></i>'
-        }
-      ],
-      add: false,
-      edit: false,
-      delete: false
-    },
+    actions: false,
     columns: {
       id: {
         title: "Sipariş Id",
@@ -67,20 +56,28 @@ export class NewOrderComponent implements OnInit {
       statusId: {
         title: "Statü",
         filter: false
+      },
+      detail: {
+        title: "Detay",
+        type: "custom",
+        renderComponent: ButtonViewComponent
       }
+    },
+    rowClassFunction: (row) => {
+      return 'ocean-st-row';  //we need this to select the closest parent as the class used by smart-table isnt applied directly
     },
     pager:
     {
       perPage: 10
     },
-    mode:'external'
+    mode: 'external'
   };
   constructor(private newOrderService: NeworderService,
     private activatedRoute: ActivatedRoute,
     private datePipe: DatePipe,
     private newOrderDetail: NewOrderDetail,
     private formBuilder: FormBuilder) {
-      this.getNewOrder();
+    this.getNewOrder();
   }
 
   ngOnInit() {
@@ -91,14 +88,12 @@ export class NewOrderComponent implements OnInit {
     this.newOrderService.getData().subscribe(data => {
       this.newOrder = data;
       this.source.load(data);
-      console.log(" this.newOrder",  this.source);
+      console.log(" this.newOrder", this.source);
     });
   }
   customRoute(e) {
     console.log('onUserRowSelect', e);
-    if (e.data.orderId === this.newOrderDetail.orderId) {
 
-    }
   }
   showDetail(newOrder) {
     this.isShow = !this.isShow;
