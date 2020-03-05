@@ -1,0 +1,15 @@
+@import "../../../scss/ui/variable";
+@import "../../../scss/ui/mixins";
+
+.btn{
+    background: map-get($colors, green);
+    width:25px ;
+    height: 25px;
+    color: white;
+    border-radius: size(5px);
+    .fa{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

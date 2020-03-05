@@ -24,6 +24,10 @@
     border-bottom: 1px solid map-get($colors, border-gray);
   
   }
+  :host/deep/table tbody tr:ng-star-inserted{
+    //childrow'un colspanını 3 yapmaya çalışıyorum
+    column-span: 3 ;
+  }
   
   :host /deep/ table tbody tr:nth-child(odd) {
     // background: map-get($colors,light-gray) !important;

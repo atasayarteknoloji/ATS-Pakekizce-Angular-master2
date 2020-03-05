@@ -6,10 +6,12 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NewOrderModule } from './getNewOrder/new-order.module';
 import { UncomplateOrderModule } from './getInprogressOrder/uncomplate-order.module';
 import { ComplatedOrderModule } from './getComplatedOrder/complated-order.module';
+import { GetInprogressOrderDetailComponent } from './get-inprogress-order-detail/get-inprogress-order-detail.component';
+import { GetCompletedOrderDetailComponent } from './get-completed-order-detail/get-completed-order-detail.component';
 
 
 @NgModule({
-  declarations: [OrderComponent],
+  declarations: [OrderComponent, GetInprogressOrderDetailComponent, GetCompletedOrderDetailComponent],
   imports: [CommonModule, OrderRoutingModule,Ng2SmartTableModule, NewOrderModule,UncomplateOrderModule,ComplatedOrderModule],
   exports: [OrderComponent]
 })

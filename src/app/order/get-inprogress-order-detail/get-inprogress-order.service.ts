@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { NewOrderDetail } from '../model/new-order-detail';
 import { endpoints } from 'src/app/shared/endpoints';
 import { Subject } from 'rxjs';
-import { NewOrderDetailComponent } from './new-order-detail.component';
+import { GetInprogressOrderDetailComponent } from './get-inprogress-order-detail.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NeworderDetailService {
+export class inprogressOrderDetailService {
 
   public componentSubjects: { [name: string]: Subject<any> } = {};
   renderer: Renderer2;

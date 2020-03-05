@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NeworderService } from './getNewOrder/new-order.service';
 import { NewOrder } from './model/new-order';
-import { NeworderDetailService } from './getNewOrderDetail/new-order-detail.service';
 import { NewOrderDetail } from './model/new-order-detail';
 import { PrintService } from '../components/print/print.service';
 
@@ -25,8 +24,7 @@ export class OrderComponent implements OnInit {
   deneme1 = true;
   deneme2 = true;
 
-  constructor(private newOrderService: NeworderService,
-    private newOrderDetailService: NeworderDetailService) {
+  constructor(private newOrderService: NeworderService) {
   }
 
   ngOnInit() {

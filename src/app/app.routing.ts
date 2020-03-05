@@ -6,12 +6,8 @@ import {AuthGuard} from './_helpers';
 import {Role} from './_models';
 import {NgModule} from '@angular/core';
 import {ROUTING} from './shared/routing';
-import { NewOrderComponent } from './order/getNewOrder/new-order.component';
-import { NewOrderDetailComponent } from './order/getNewOrderDetail/new-order-detail.component';
-import { UncomplateOrderComponent } from './order/getInprogressOrder/uncomplate-order.component';
 import { OrderComponent } from './order/order.component';
 import {ToDyehouseComponent} from './dyehouse/to-dyehouse/to-dyehouse.component';
-import { RegisterComponent } from './register/register.component';
 import { TurnDyehouseComponent } from './dyehouse/turn-dyehouse/turn-dyehouse.component';
 import { PackagingComponent } from './packaging/packaging.component';
 
@@ -32,22 +28,6 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path:'register',
-    component:RegisterComponent
-  },
-  {
-    path: 'new-order',
-    loadChildren: () => import('./order/getNewOrder/new-order.module').then(m => m.NewOrderModule)
-  },
-  {
-    path: 'new-order-detail',
-    loadChildren: () => import('./order/getNewOrderDetail/new-order-detail.module').then(m => m.NewOrderDetailModule)
-  },
-  {
-    path: 'uncomplate-order',
-    loadChildren: () => import('./order/getInprogressOrder/uncomplate-order.module').then(m => m.UncomplateOrderModule)
-  },
-  {
     path: 'order',
     loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
   },
@@ -62,18 +42,6 @@ const routes: Routes = [
   {
     path: 'packaging',
     loadChildren: () => import('./packaging/packaging.module').then(m => m.PackagingModule)
-  },
-  {
-    path: ROUTING.NEW_ORDER,
-    component: NewOrderComponent
-  },
-  {
-    path: ROUTING.NEWORDERDETAIL,
-    component: NewOrderDetailComponent
-  },
-  {
-    path: ROUTING.UNCOMPLATEORDER,
-    component: UncomplateOrderComponent
   },
   {
     path: ROUTING.ORDER,

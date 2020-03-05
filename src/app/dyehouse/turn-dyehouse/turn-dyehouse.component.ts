@@ -10,6 +10,7 @@ import { TurnDyehouse } from '../../order/model/turn-dyehouse';
 export class TurnDyehouseComponent implements OnInit {
   settings = {
     hideSubHeader: true,
+    selectMode: 'multi',
     actions: {
       position: 'right',
       columnTitle: 'Barkod',
@@ -70,5 +71,21 @@ export class TurnDyehouseComponent implements OnInit {
   }
   toggleVisibility(e){
     this.checked= e.target.checked;
+  }
+  selectedRows: any;
+  onUserRowSelect(event) {
+    this.selectedRows = event.data;
+    this.orderid= this.selectedRows.id;
+    this.id=this.selectedRows.order.statusId;
+    console.log(event.data);
+  }
+  orderid:number;
+  id:number;
+  onClick() {
+    // It will console all the selected rows
+    console.log("seçilen satır statü", this.selectedRows.order.statusId);
+    this.selectedRows.order.statusId =4;
+    this.dyehouseService.updatePost(this.orderid,this.selectedRows.order.statusId).subscribe(
+      data=>{this.datas=data;})
   }
 }

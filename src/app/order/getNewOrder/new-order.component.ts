@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ApplicationRef, Input, ChangeDetectorRef } from '@angular/core';
 import { NeworderService } from './new-order.service';
 import { NewOrder } from '../model/new-order';
-import { Router, Routes, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { NewOrderDetail } from '../model/new-order-detail';
-import { Barcode } from 'src/app/barcode/barcode';
-import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LocalDataSource } from 'ng2-smart-table';
-import { parse } from 'querystring';
-import { NewOrderDetailComponent } from '../getNewOrderDetail/new-order-detail.component';
-import { ButtonViewComponent } from 'src/app/components/button-view/button-view.component';
+import { ButtonViewComponent } from 'src/app/components/button-view//button-view/button-view.component';
+import { NeworderDetailService } from '../getNewOrderDetail/new-order-detail.service';
 
 
 @Component({
@@ -20,19 +15,17 @@ import { ButtonViewComponent } from 'src/app/components/button-view/button-view.
   providers: [DatePipe]
 })
 export class NewOrderComponent implements OnInit {
-  filterText: string;
+
   newOrder: NewOrder[] = [];
-  isShow = true;
-  base64: string;
-  barcode: string;
-  value: string;
-  display: boolean;
-  form: FormGroup;
-  statu = 1;
   source: LocalDataSource = new LocalDataSource();
+
   settings = {
     hideSubHeader: true,
-    actions: false,
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
+    },
     columns: {
       id: {
         title: "Sipariş Id",
@@ -57,10 +50,10 @@ export class NewOrderComponent implements OnInit {
         title: "Statü",
         filter: false
       },
-      detail: {
-        title: "Detay",
-        type: "custom",
-        renderComponent: ButtonViewComponent
+      button:{
+        title:'Detay',
+        type:'custom',
+        renderComponent:ButtonViewComponent
       }
     },
     rowClassFunction: (row) => {
@@ -73,16 +66,13 @@ export class NewOrderComponent implements OnInit {
     mode: 'external'
   };
   constructor(private newOrderService: NeworderService,
-    private activatedRoute: ActivatedRoute,
     private datePipe: DatePipe,
-    private newOrderDetail: NewOrderDetail,
+    private newOrderDetailService: NeworderDetailService,
     private formBuilder: FormBuilder) {
     this.getNewOrder();
   }
 
-  ngOnInit() {
-    console.log("init", this.source);
-  }
+  ngOnInit() {}
 
   getNewOrder() {
     this.newOrderService.getData().subscribe(data => {
@@ -91,24 +81,7 @@ export class NewOrderComponent implements OnInit {
       console.log(" this.newOrder", this.source);
     });
   }
-  customRoute(e) {
-    console.log('onUserRowSelect', e);
 
-  }
-  showDetail(newOrder) {
-    this.isShow = !this.isShow;
-  }
-  generateBarcode() {
-    if (this.barcode == '') {
-      this.display = false;
-      return;
-    }
-    else {
-      this.value = this.barcode;
-      this.display = true;
-      this.newOrderService.postData(this.statu);
-    }
-  }
   onSearch(query: string = '') {
     this.source.setFilter([
       // fields we want to include in the search
@@ -129,5 +102,8 @@ export class NewOrderComponent implements OnInit {
         search: query
       }
     ], false);
+  }
+  onCustomAction(event) {
+    
   }
 }

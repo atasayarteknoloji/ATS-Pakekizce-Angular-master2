@@ -30,8 +30,10 @@ import { TurnDyehouseModule } from './dyehouse/turn-dyehouse/turn-dyehouse.modul
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { PackagingModule } from './packaging/packaging.module';
 import { ComplatedOrderModule } from './order/getComplatedOrder/complated-order.module';;
-import { ButtonViewComponent } from './components/button-view/button-view.component'
-
+import { ButtonViewComponent } from './components/button-view/button-view/button-view.component';
+import { BarcodeScannerComponent } from './barcode-scanner/barcode-scanner.component';
+import { ButtonView1Component } from './components/button-view/button-view1/button-view1.component';
+import { ButtonView2Component } from './components/button-view/button-view2/button-view2.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -55,7 +57,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule,
     ToDyehouseModule,
     TurnDyehouseModule,
-    NewOrderDetailModule,
     Ng2SearchPipeModule,
     NgxBarcodeModule,
     PackagingModule,
@@ -72,10 +73,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PrintComponent,
     RegisterComponent,
     BarcodeComponent,
-    ButtonViewComponent
+    ButtonViewComponent,
+    BarcodeScannerComponent,
+    ButtonView1Component,
+    ButtonView2Component
   ],
   entryComponents:[
-    ButtonViewComponent
+    ButtonViewComponent,
+    ButtonView1Component,
+    ButtonView2Component
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

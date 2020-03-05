@@ -10,6 +10,7 @@ import { Packaging } from '../order/model/packaging';
 export class PackagingComponent implements OnInit {
   settings = {
     hideSubHeader: true,
+    selectMode: 'multi',
     actions: {
       position: 'right',
       columnTitle: 'Barkod',
@@ -86,5 +87,21 @@ export class PackagingComponent implements OnInit {
     this.packagingService.getData().subscribe(o=>{
       this.datas=o;
     });
+  }
+  selectedRows: any;
+  onUserRowSelect(event) {
+    this.selectedRows = event.data;
+    this.orderid= this.selectedRows.id;
+    this.id=this.selectedRows.order.statusId;
+    console.log(event.data);
+  }
+  orderid:number;
+  id:number;
+  onClick() {
+    // It will console all the selected rows
+    console.log("seçilen satır statü", this.selectedRows.order.statusId);
+    this.selectedRows.order.statusId =5;
+    this.packagingService.updatePost(this.orderid,this.selectedRows.order.statusId).subscribe(
+      data=>{this.datas=data;})
   }
 }

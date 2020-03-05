@@ -1,0 +1,10 @@
+<div class="container">
+  <form class="form">
+    <input #newBarcode class="search" type="text" (keyup.enter)="addBarcode(newBarcode.value); newBarcode.value='' "
+      autofocus="on" placeholder="Barkod okutunuz" >
+    <ul>
+      <li *ngFor="let barcode of barcodes">{{barcode}}</li>
+    </ul>
+  </form>
+  <button class="button">KAPAT</button>
+</div>

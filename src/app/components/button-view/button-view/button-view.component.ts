@@ -11,32 +11,31 @@ import { Subject } from 'rxjs';
 })
 export class ButtonViewComponent implements OnInit {
 
-  constructor(private injiService:NeworderDetailService,
+  constructor(private injiService: NeworderDetailService,
     public zone: NgZone,
     private ref: ChangeDetectorRef) { }
 
-    renderValue:string;
+  @Input() value: string | number;
+  @Input() rowData: any;
+  isOpen: boolean = false;
+  expanededComp: any = null;
+  renderValue: string;
+
+
   ngOnInit() {
     this.renderValue = this.value.toString().toUpperCase();
-     this.injiService.componentSubjects[this.rowData.componentName] = new Subject();
-    this.injiService.componentSubjects[this.rowData.componentName].subscribe(()=>{
+    this.injiService.componentSubjects[this.rowData.componentName] = new Subject();
+    this.injiService.componentSubjects[this.rowData.componentName].subscribe(() => {
       debugger;
-     
+
       this.injiService.removeComponent(this.expanededComp);
       this.expanededComp = null;
       //this.renderValue = this.value.toString().toUpperCase(); //"Open";
       this.isOpen = false;
       //firing the change detection manually
-      this.ref.markForCheck();    
+      this.ref.markForCheck();
     });
   }
-
-  @Input() value: string | number;
-  @Input() rowData: any;
-
-  isOpen:boolean = false;
-  expanededComp:any = null;
-
   onClick(event) {
     console.log("toggle");
     if(this.isOpen){

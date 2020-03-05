@@ -9,7 +9,8 @@
         <input #search class="search" type="text" placeholder="Aramak istediğiniz veriyi giriniz"
           (keydown.enter)="onSearch(search.value)">
       </div>
-      <ng2-smart-table [settings]="settings" [source]="datas">
+      <ng2-smart-table [settings]="settings" [source]="datas" (userRowSelect)="onUserRowSelect($event)">
       </ng2-smart-table>
+      <button (click)="onClick()"> Get Selected </button>
     </div>
   </div>

@@ -1,5 +1,5 @@
-@import "../../scss/ui/variable";
-@import "../../scss/ui/mixins";
+@import "../../../scss/ui/variable";
+@import "../../../scss/ui/mixins";
 .button{
     background: map-get($colors, green);
     width:25px ;

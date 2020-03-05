@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UncomplateOrderService } from './uncomplate-order.service';
 import { UncomplateOrder } from '../model/uncomplate-order';
 import { DatePipe } from '@angular/common';
+import { ButtonView1Component } from 'src/app/components/button-view/button-view1/button-view1.component';
+import { LocalDataSource } from 'ng2-smart-table';
 
 @Component({
   selector: 'app-uncomplate-order',
@@ -13,14 +15,6 @@ export class UncomplateOrderComponent implements OnInit {
   settings = {
     hideSubHeader: true,
     actions: {
-      position: 'right',
-      columnTitle: '',
-      custom: [
-        {
-          name: 'reminderAction',
-          title: '<i class="fa fa-eye" title="Detay"></i>'
-        }
-      ],
       add: false,
       edit: false,
       delete: false
@@ -48,7 +42,15 @@ export class UncomplateOrderComponent implements OnInit {
       statusId: {
         title: "Statü",
         filter: false
+      },
+      button:{
+        title:'Detay',
+        type:'custom',
+        renderComponent:ButtonView1Component
       }
+    },
+    rowClassFunction: (row) => {
+      return 'ocean-st-row';  //we need this to select the closest parent as the class used by smart-table isnt applied directly
     },
     pager:
     {
@@ -61,7 +63,7 @@ export class UncomplateOrderComponent implements OnInit {
     private datePipe: DatePipe) { }
 
   inprogressOrder: UncomplateOrder[] =[];
-  isShow = true;
+  source: LocalDataSource = new LocalDataSource();
 
   ngOnInit() {
     this.getInprogressOrder();
@@ -69,11 +71,28 @@ export class UncomplateOrderComponent implements OnInit {
   getInprogressOrder() {
     this.uncomplateOrderService.getData().subscribe(o => {
       this.inprogressOrder = o;
+      this.source.load(o);
     });
   }
-  customRoute(e) {
-    console.log('onUserRowSelect', e);
-  }
-  showDetail() {
+  onSearch(query: string = '') {
+    this.source.setFilter([
+      // fields we want to include in the search
+      {
+        field: 'id',
+        search: query
+      },
+      {
+        field: 'createTime',
+        search: query
+      },
+      {
+        field: 'clientCode',
+        search: query
+      },
+      {
+        field: 'statu',
+        search: query
+      }
+    ], false);
   }
 }

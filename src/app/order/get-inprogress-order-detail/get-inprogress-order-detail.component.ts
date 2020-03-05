@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { NeworderDetailService } from './new-order-detail.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { inprogressOrderDetailService } from './get-inprogress-order.service';
 import { NewOrderDetail } from '../model/new-order-detail';
 
 @Component({
-  selector: 'app-new-order-detail',
-  templateUrl: './new-order-detail.component.html',
-  styleUrls: ['./new-order-detail.component.scss']
+  selector: 'app-get-inprogress-order-detail',
+  templateUrl: './get-inprogress-order-detail.component.html',
+  styleUrls: ['./get-inprogress-order-detail.component.scss']
 })
-export class NewOrderDetailComponent implements OnInit {
+export class GetInprogressOrderDetailComponent implements OnInit {
   settings={
     hideSubHeader:true,
     actions:{
@@ -71,7 +71,7 @@ export class NewOrderDetailComponent implements OnInit {
       }
     },
   }
-  constructor(private detailService:NeworderDetailService) { }
+  constructor(private detailService:inprogressOrderDetailService) { }
   @Input() name: string;
    @Input() componentName: string;
   @Input() ref: any;
